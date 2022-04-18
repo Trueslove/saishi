@@ -1,0 +1,48 @@
+<view class="user-competition-page">
+    <view class="user-wrap">
+        <image class="user-bg" src="../../static/images/user-bg.png"></image>
+        <view class="user-info">
+            <navigator url="/pages/editUser/index" class="avatar">
+                <image src="{{imageUrl}}{{userInfo.portraitUrl}}"></image>
+            </navigator>
+            <view class="user-name">
+                <text>{{userInfo.userName}}</text>
+            </view>
+        </view>
+        <view class="text">
+            <image src="../../static/images/good.png" alt="" />
+            共参与
+            <text>{{total}}</text>
+            场赛事
+        </view>
+    </view>
+    <view class="competition-list">
+        <block wx:for="{{list}}" wx:item="item" wx:key="{{index}}" wx:index="index">
+            <view class="title">
+                <image src="../../static/images/date.png"></image>
+                <view >
+                    {{item.year}}年参与
+                    <text class="num" style="color:#FE821E">{{item.activityList.length}}</text>
+                    场赛事
+                </view>
+            </view>
+            <view wx:for="{{item.activityList}}" wx:for-item="child" wx:for-index="key" wx:for-key="{{key}}">
+                <navigator hover-class="none" url="/pages/competition/index?id={{child.activityId}}" class="item-wrap">
+                    <view class="item">
+                        <view class="cover">
+                            <image src="{{imageUrl}}{{child.coverPic[0].url}}"></image>
+                        </view>
+                        <view class="info">
+                            <view class="info-title">{{child.activityName}}</view>
+                            <text class="work">上传作品：{{child.zpCount}}个</text>
+                            <view class="bottom">
+                                <text>报名时间：{{child.enrollTime}}</text>
+                                <navigator hover-class="none" class="a">活动详情>></navigator>
+                            </view>
+                        </view>
+                    </view>
+                </navigator>
+            </view>
+        </block>
+    </view>
+</view>

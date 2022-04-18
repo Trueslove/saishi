@@ -1,0 +1,95 @@
+<view class="user-page">
+    <view class="user-wrap">
+        <image class="user-bg" src="../../static/images/user-bg.png"></image>
+        <view class="user-info">
+            <navigator url="/pages/editUser/index" class="avatar" hover-class="none">
+                <image src="{{imageUrl}}{{userInfo.portraitUrl}}"></image>
+            </navigator>
+            <view class="user-name">
+                <text>{{userInfo.userName}}</text>
+                <text>点击头像编辑个人资料</text>
+            </view>
+        </view>
+        <navigator class="icon" url="/pages/message/index" hover-class="none">
+            <image src="../../static/images/group.png"></image>
+        </navigator>
+    </view>
+    <view class="user-action">
+        <view class="user-action-item">
+            <text>{{userCountData.zpCount}}</text>
+            <text>作品数</text>
+        </view>
+        <view class="user-action-item">
+            <text>{{userCountData.rqCount}}</text>
+            <text>总人气</text>
+        </view>
+        <view class="user-action-item">
+            <text>{{userCountData.jxCount}}</text>
+            <text>奖项</text>
+        </view>
+    </view>
+
+    <!-- 列表 -->
+    <view class="list">
+        <navigator hover-class="none" url="/pages/user_competition/index" class="item">
+            <view class="icon">
+                <image src="../../static/images/user-1.png"></image>
+            </view>
+            <view class="info">
+                <text>我的赛事</text>
+                <text>共参与{{userCountData.activityCount}}参赛</text>
+            </view>
+            <image src="../../static/images/right-arrow.png"></image>
+        </navigator>
+        <navigator hover-class="none" class="item" url="/pages/user_work/index">
+            <view class="icon">
+                <image src="../../static/images/user-2.png"></image>
+
+            </view>
+            <view class="info">
+                <text>我的作品</text>
+                <text>共上传{{userCountData.zpCount}}个作品</text>
+            </view>
+            <image src="../../static/images/right-arrow.png"></image>
+
+        </navigator>
+        <navigator hover-class="none" class="item" url="/pages/user_awards/index">
+            <view class="icon">
+                <image src="../../static/images/user-3.png"></image>
+
+            </view>
+            <view class="info">
+                <text>我的奖项</text>
+                <text>共获得{{userCountData.jxCount}}个奖项</text>
+            </view>
+            <image src="../../static/images/right-arrow.png"></image>
+
+        </navigator>
+
+    </view>
+    <view class="list">
+        <view class="item not-border" hover-class="none" bindtap="openJJHH">
+            <view class="icon">
+                <image src="../../static/images/user-4.png"></image>
+            </view>
+            <view class="info ">
+                <text>我的订单</text>
+                <text>请前往“家家互互”APP内查看</text>
+            </view>
+            <image src="../../static/images/right-arrow.png"></image>
+
+        </view>
+    </view>
+
+    <button bindtap="layout">退出登录</button>
+
+
+    <popup class="popup-jjhh" bind:close="openJJHH" show="{{showJJHHPopup}}">
+        <view class="popup-jjhh-wrap">
+            <text class="title">请前往 家家互互app 查看更多</text>
+            <view class="message">按住并识别二维码 获取家家互互APP</view>
+            <image src="https://s5.51cto.com//oss/202202/11/bb32463967c2886602e7fef20242cbf4.jpg?x-oss-process=image/resize,m_fixed,h_120,w_120"></image>
+            <button bindtap="openJJHH">我知道了</button>
+        </view>
+    </popup>
+</view>

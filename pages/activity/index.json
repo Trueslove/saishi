@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "list-title": "/commpents/listTitle/index",
+    "activity-scroll-item": "/commpents/activityScrollItem/index",
+    "activity-item": "/commpents/activityItem/index",
+    "popup": "/commpents/popup/index"
+  },
+  "navigationBarBackgroundColor": "#F7F7F7"
+}

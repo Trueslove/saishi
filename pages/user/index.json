@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "popup": "/commpents/popup/index"
+  },
+  "navigationBarTitleText": "个人中心",
+  "navigationBarBackgroundColor": "#f7f7f7"
+}

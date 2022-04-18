@@ -1,0 +1,140 @@
+<view class="coupon-page commodityCard">
+    <view class="commodityCard-list">
+        <view class="commodityCard-item">
+            <view class="top">
+                <image src="https://p0.ssl.img.360kuai.com/t013fd0b0ad9d0d8a48.webp"></image>
+                <view class="select">
+                    <image src="../../static/images/coupon-select.png"></image>
+                    <text>已选择</text>
+                </view>
+            </view>
+            <view class="bottom">
+                <view class="bottom-item a1">
+                    <text>圣诞礼品兑换卡</text>
+                    <text>已激活</text>
+                </view>
+                <view class="bottom-item a2">
+                    <text>可用于上海鸿萌蛋贸易有限公司的商品</text>
+                    <text>余额</text>
+                </view>
+                <view class="bottom-item a3">
+                    <text>有效期：2021/01/01 -2021/12/31</text>
+                    <text>¥300.00</text>
+                </view>
+            </view>
+        </view>
+        <view class="commodityCard-item">
+            <view class="top">
+                <image src="https://p0.ssl.img.360kuai.com/t013fd0b0ad9d0d8a48.webp"></image>
+                <view class="select">
+                    <image src="../../static/images/coupon-select.png"></image>
+                    <text>已选择</text>
+                </view>
+            </view>
+            <view class="bottom">
+                <view class="bottom-item a1">
+                    <text>圣诞礼品兑换卡</text>
+                    <text>已激活</text>
+                </view>
+                <view class="bottom-item a2">
+                    <text>可用于上海鸿萌蛋贸易有限公司的商品</text>
+                    <text>余额</text>
+                </view>
+                <view class="bottom-item a3">
+                    <text>有效期：2021/01/01 -2021/12/31</text>
+                    <text>¥300.00</text>
+                </view>
+            </view>
+        </view>
+        <view class="commodityCard-item">
+            <view class="top">
+                <image src="https://p0.ssl.img.360kuai.com/t013fd0b0ad9d0d8a48.webp"></image>
+                <view class="select">
+                    <image src="../../static/images/coupon-select.png"></image>
+                    <text>已选择</text>
+                </view>
+            </view>
+            <view class="bottom">
+                <view class="bottom-item a1">
+                    <text>圣诞礼品兑换卡</text>
+                    <text>已激活</text>
+                </view>
+                <view class="bottom-item a2">
+                    <text>可用于上海鸿萌蛋贸易有限公司的商品</text>
+                    <text>余额</text>
+                </view>
+                <view class="bottom-item a3">
+                    <text>有效期：2021/01/01 -2021/12/31</text>
+                    <text>¥300.00</text>
+                </view>
+            </view>
+        </view>
+        <view class="commodityCard-item">
+            <view class="top">
+                <image src="https://p0.ssl.img.360kuai.com/t013fd0b0ad9d0d8a48.webp"></image>
+                <view class="select">
+                    <image src="../../static/images/coupon-select-ed.png"></image>
+                    <text>已选择</text>
+                </view>
+            </view>
+            <view class="bottom">
+                <view class="bottom-item a1">
+                    <text>圣诞礼品兑换卡</text>
+                    <text>已激活</text>
+                </view>
+                <view class="bottom-item a2">
+                    <text>可用于上海鸿萌蛋贸易有限公司的商品</text>
+                    <text>余额</text>
+                </view>
+                <view class="bottom-item a3">
+                    <text>有效期：2021/01/01 -2021/12/31</text>
+                    <text>¥300.00</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="placeholder">
+        <text>以下优惠暂不满足使用条件</text>
+    </view>
+    <view class="commodityCard-list">
+
+        <view class="commodityCard-item dont">
+            <view class="top">
+                <image src="https://p0.ssl.img.360kuai.com/t013fd0b0ad9d0d8a48.webp"></image>
+                <view class="select">
+
+                    <text>已过期</text>
+                </view>
+            </view>
+            <view class="bottom">
+                <view class="bottom-item a1">
+                    <text>圣诞礼品兑换卡</text>
+                    <text>已激活</text>
+                </view>
+                <view class="bottom-item a2">
+                    <text>可用于上海鸿萌蛋贸易有限公司的商品</text>
+                    <text>余额</text>
+                </view>
+                <view class="bottom-item a3">
+                    <text>有效期：2021/01/01 -2021/12/31</text>
+                    <text>¥300.00</text>
+                </view>
+            </view>
+        </view>
+    </view>
+
+
+    <view class="action">
+        <view class="left">
+            <view class="left-item">
+                <text>已选额度：¥600.00</text>
+            </view>
+            <view class="left-item">
+                <text>实付：</text>
+                <text class="reds">¥52000.00</text>
+            </view>
+        </view>
+        <button>提交订单</button>
+        <!-- <button class="null">提交订单</button> -->
+    </view>
+</view>

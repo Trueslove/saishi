@@ -1,0 +1,14 @@
+.customer-service {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 24rpx;
+    width: 100rpx;
+    height: 100rpx;
+    z-index: 10;
+}
+
+.customer-service image {
+    width: 100%;
+    height: 100%;
+}

@@ -1,0 +1,87 @@
+<nav-bar></nav-bar>
+<view class="home-page">
+  <!-- 用户模块 -->
+  <view class="user-wrap" style="padding-top: {{navbarHeight + 44}}px;">
+    <view class="user-left" bindtap="goUser">
+      <image class="avatar" src="{{indexData.dfs}}{{indexData.userMsg.portraitUrl}}"></image>
+      <text class="name">{{indexData.userMsg.userName}}</text>
+    </view>
+    <view class="user-right">
+      <view class="icon-wrap">
+        <image class="icon" bindtap="goUser" src="../../static/images/user.png"></image>
+      </view>
+      <view class="icon-wrap">
+        <image class="icon" bindtap="goMessage" src="../../static/images/group.png"></image>
+        <text>{{indexData.userMsg.msgCount}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="top-swiper-nav">
+    <!-- 轮播图模块 -->
+    <view class="index-swiper">
+      <d-swiper url="{{indexData.dfs}}" list="{{indexData.topAdvert}}"></d-swiper>
+    </view>
+    <!-- 导航 -->
+    <view class="nav">
+      <navigator class="nav-item" hover-class="none" url="/pages/activity/index">
+        <image src="../../static/images/nav-1.png"></image>
+        <text>精彩活动</text>
+      </navigator>
+      <navigator bindtap="showToast" class="nav-item" hover-class="none">
+        <image src="../../static/images/nav-2.png"></image>
+        <text>热门课程</text>
+      </navigator>
+      <navigator class="nav-item" hover-class="none" url="/pages/news/index">
+        <image src="../../static/images/nav-3.png"></image>
+        <text>新闻咨询</text>
+      </navigator>
+      <navigator class="nav-item" hover-class="none" url="/pages/commodity/index">
+        <image src="../../static/images/nav-4.png"></image>
+        <text>健康成长</text>
+      </navigator>
+    </view>
+  </view>
+  <!-- 专题活动 -->
+  <view class="topic-wrap">
+    <!-- 横式 -->
+    <view class="scroll-wrap" style="width: {{640 * 2}}rpx;">
+      <activity-scroll-item wx:for="{{indexData.specialAdvert}}" wx:item="{{item}}" wx:index="{{index}}" wx:key="{{index}}" item="{{item}}" marginLeft="20" width="640rpx" />
+    </view>
+  </view>
+  <view class="home-b-info">
+    <!-- 竖式 -->
+    <view class="topic-list">
+      <activity-item index="{{index}}" wx:for="{{indexData.indexActivityList}}" wx:item="{{item}}" wx:index="{{index}}" wx:key="{{index}}" item="{{item}}" />
+    </view>
+    <view class="link">
+      <navigator class="link-left" url="/pages/webView/index?url=www.baidu.com" hover-class="none">
+        我要办展
+      </navigator>
+      <navigator url="/pages/activity/index" class="go" hover-class="none">
+        更多活动
+        <image src="../../static/images/link-arrow.png"></image>
+      </navigator>
+    </view>
+    <navigator class="ad" hover-class="none" url="/pages/webView/index?url=www.baidu.com">
+      <image src="{{indexData.dfs}}{{indexData.bottomAdvert[0].url}}"></image>
+    </navigator>
+    <navigator url="/pages/news/index" class="news-title" hover-class="none">
+      <image src="../../static/images/news-title.png"></image>
+    </navigator>
+    <view class="news-list">
+      <view wx:for="{{indexData.newsList}}" wx:item="{{item}}" wx:key="{{index}}">
+        <new-list-item-a wx:if="{{!item.coverPic}}" item="{{item}}" />
+        <new-list-item-b wx:else item="{{item}}" />
+      </view>
+      <!-- <new-list-item-b />
+      <new-list-item-b border="none" /> -->
+      <!-- <new-list-video /> -->
+      <!-- <new-list-video /> -->
+      <!-- 加载更多 -->
+      <button class="more" bindtap="goActivityList">
+        更多新闻资讯
+        <image src="../../static/images/link-arrow.png"></image>
+      </button>
+    </view>
+  </view>
+</view>

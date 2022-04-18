@@ -1,0 +1,5 @@
+<view catchtap="onClose" class="cu-modal bottom-modal {{ show ? 'show':''}}">
+  <view class="cu-dialog popup-bottom" catchtap="reset">
+    <slot></slot>
+  </view>
+</view>

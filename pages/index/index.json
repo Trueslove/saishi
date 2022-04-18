@@ -1,0 +1,12 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "nav-bar": "/commpents/navbar/index",
+    "new-list-item-a": "/commpents/newListItemA/index",
+    "new-list-item-b": "/commpents/newListItemB/index",
+    "new-list-video": "/commpents/newListVideo/index",
+    "activity-item": "/commpents/activityItem/index",
+    "activity-scroll-item": "/commpents/activityScrollItem/index",
+    "d-swiper": "/commpents/swiper/index"
+  }
+}

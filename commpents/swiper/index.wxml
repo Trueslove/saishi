@@ -1,0 +1,13 @@
+<!-- 轮播图模块 -->
+<view class="home-swiper" bindtap="goDetail">
+    <swiper bindchange="changeSwiper" autoplay>
+        <swiper-item wx:for="{{list}}" wx:item="{{item}}" wx:index="{{index}}" wx:key="{{index}}">
+            <image mode="scaleToFill" src="{{url}}{{item.url}}">
+            </image>
+        </swiper-item>
+    </swiper>
+    <!-- 指示点 -->
+    <view class="indicator">
+        <view class="indicator-item {{currentIndex == index ? 'current' :''}}" wx:for="{{list}}" wx:item="item" wx:key="index"></view>
+    </view>
+</view>

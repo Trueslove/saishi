@@ -1,0 +1,26 @@
+<view class="mp3">
+<audio src="{{imageUrl}}{{item.url}}"></audio>
+  <view class="name">
+    <image src="../../static/images/music.png"></image>
+    <!-- {{item.name}} -->
+    歌声与微笑
+  </view>
+  <view class="bottom">
+    <view class="process-wrap">
+
+      <view class="process">
+        <view class="process-con">
+          <view class="procress-dian"></view>
+        </view>
+      </view>
+      <view class="time">
+
+        <text>3:16</text>
+        <text>4:22</text>
+      </view>
+
+    </view>
+    <image class="audio-start" src="../../static/images/mp3-start.png"></image>
+  </view>
+
+</view>

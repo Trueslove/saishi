@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "new-list-item-a": "/commpents/newListItemA/index",
+    "new-list-item-b": "/commpents/newListItemB/index",
+    "new-list-video": "/commpents/newListVideo/index",
+    "list-title": "/commpents/listTitle/index"
+  },
+  "navigationBarTitleText": "德稻慧展",
+  "navigationBarBackgroundColor": "#F7F7F7"
+}

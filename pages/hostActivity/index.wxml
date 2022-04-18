@@ -1,0 +1,14 @@
+<view class="host-activity-page">
+  <view class="top">
+    <image class="bg" src="../../static/images/uploading.png"></image>
+    <view class="host-user">
+      <image src="{{imageUrl}}{{sponsor.url}}"></image>
+      <text>{{sponsor.name}}</text>
+      <view class="msg">{{sponsor.introduction}}</view>
+    </view>
+  </view>
+  <view class="list">
+    <view class="title"><text>#</text>主办活动</view>
+    <activityItem wx:for="{{list}}" wx:item="item" wx:index="index" wx:key="{{index}}" item="{{item}}"></activityItem>
+  </view>
+</view>

@@ -1,0 +1,268 @@
+<import src="../../wxParse/wxParse.wxml" />
+<view class="commodity-detail-page">
+  <view class="commodity-detail-swiper">
+    <swiper bindchange="bindSwiper">
+      <swiper-item wx:for="{{ goodsInfo.products.pictures }}" wx:item="item" wx:key="index" wx:key="{{index}}">
+        <image src="{{imageUrl}}{{item.url}}"></image>
+      </swiper-item>
+    </swiper>
+    <view class="swiper-point">
+      <view class="point-item">{{curIndex}}/{{goodsInfo.products.pictures.length}}</view>
+    </view>
+  </view>
+  <view class="commodity-info">
+    <view class="money">
+      <text>¥</text>
+      {{goodsInfo.products.chargeAmount}}
+    </view>
+    <view class="title">{{goodsInfo.products.productsName}}</view>
+    <view class="info-bottom">
+      <view class="left">
+        <view class="address">
+          <image src="../../static/images/address.png"></image>
+          <text>{{address}}</text>
+        </view>
+        <view class="label">{{goodsInfo.products.refundMechanismName}}</view>
+      </view>
+      <text class="sold">已售:{{goodsInfo.sumBuyNum}}</text>
+    </view>
+  </view>
+  <!-- <view class="commodity-ad">
+    <image src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2F1113%2F062120104347%2F200621104347-1-1200.jpg&refer=http%3A%2F%2Fimg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1650029489&t=7edb017e89fe07d9ef4fea022f1810de"></image>
+  </view> -->
+  <view class="discount detail-wrap border-b-20">
+    <image bindtap="openPopup" data-target="card" src="../../static/images/card.png"></image>
+  </view>
+  <view class="discount detail-wrap border-b-20" bindtap="openPopup" data-target="coupon">
+    <text class="commodity-detail-title">优惠</text>
+    <view class="discount-wrap">
+      <view class="discount-wrap-item" wx:for="{{coupons}}">{{item.couponName}}</view>
+    </view>
+    <view class="arrow">
+      <image src="../../static/images/arrow-black.png"></image>
+    </view>
+  </view>
+  <view class=" detail-wrap" bindtap="openPopup" data-target="pay">
+    <text class="commodity-detail-title">规格</text>
+    <view class="txt">{{goodsInfo.tbServiceProductsSpecsDefault.specsName}}</view>
+    <view class="arrow">
+      <image src="../../static/images/arrow-black.png"></image>
+    </view>
+  </view>
+  <navigator class=" detail-wrap" url="/pages/address/index?url=commodityDetail" hover-class="none">
+    <text class="commodity-detail-title">收货</text>
+    <view wx:if="{{addressInfo}}" class="txt">
+      {{addressInfo.province}} {{addressInfo.city}} {{addressInfo.area}} {{addressInfo.detailsAddress}}
+    </view>
+    <view wx:else class="txt">
+      {{goodsInfo.userDefaultAddress.province}} {{goodsInfo.userDefaultAddress.city}} {{goodsInfo.userDefaultAddress.area}} {{goodsInfo.userDefaultAddress.detailsAddress}}
+    </view>
+    <view class="arrow">
+      <image src="../../static/images/arrow-black.png"></image>
+    </view>
+  </navigator>
+  <view class=" detail-wrap border-b-20">
+    <text class="commodity-detail-title">运费</text>
+    <view class="txt" wx:if="{{goodsInfo.yunfeiMsg.type == 1}}">免运费</view>
+    <view class="txt" wx:if="{{goodsInfo.yunfeiMsg.type == 2}}">
+      超过{{goodsInfo.yunfeiMsg.content.fullFreeShipping}}钱包邮，每增加{{goodsInfo.yunfeiMsg.content.addQuantity}}件增加运费{{goodsInfo.yunfeiMsg.content.addFreight}}元
+    </view>
+    <view class="txt" wx:if="{{goodsInfo.yunfeiMsg.type == 3}}">当前地址不支持配送，可切换收货地址</view>
+  </view>
+  <view class="detail-wrap-2 border-b-20 ">
+    <view class="detail-title-2">属性</view>
+    <view class="attributes">
+      <view class="attributes-item" wx:for="{{goodsInfo.productTemplate}}">
+        <text>{{item.title}}</text>
+        <text>{{item.answer}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="detail-wrap-2">
+    <view class="detail-title-2">商品详情</view>
+    <view class="detail-wrap-2 big-img">
+      <!-- <template is="wxParse" data="{{ wxParseData: newsContent.nodes }}"/> -->
+      <image mode="widthFix" wx:for="{{goodsInfo.products.goodsDetailsUrl}}" src="{{imageUrl}}{{item.url}}"></image>
+    </view>
+  </view>
+  <view class="action">
+    <view class="left">
+      <view class="left-wrap">
+        <image src="../../static/images/bottom-left-1.png"></image>
+        <text>体验店</text>
+      </view>
+      <view class="left-wrap">
+        <image src="../../static/images/bottom-left-2.png"></image>
+        <text>客服</text>
+      </view>
+    </view>
+    <button bindtap="openPopup" data-target="pay">立即购买</button>
+  </view>
+  <!-- 购买 -->
+  <popup-bottom show="{{payPopupShow}}" bind:close="hideModal">
+    <view class="pay-wrap">
+      <view class="info">
+        <image src="{{imageUrl}}{{goodsInfo.tbServiceProductsSpecs[specsId].url}}"></image>
+        <view class="info-right">
+          <view class="money">
+            <text>￥</text>
+            <text>{{goodsInfo.tbServiceProductsSpecs[specsId].price}}</text>
+          </view>
+          <!-- <text class="msg">单机身，不含镜头</text> -->
+        </view>
+      </view>
+      <view class="popup-wrap">
+        <view class="popup-title">规格</view>
+        <view class="select-wrap">
+          <text wx:for="{{goodsInfo.tbServiceProductsSpecs}}" data-id="{{index}}" catch:tap="handleChangeTbId" class="{{specsId == index ? 'active' : ''}}">
+            {{item.specsName}}
+          </text>
+        </view>
+        <view class="number">
+          <view class="leftg">
+            <view class="popup-title">数量</view>
+            <text class="p">每位用户限购{{goodsInfo.stock}}件</text>
+          </view>
+          <view class="num-action">
+            <button data-type="jian" catch:tap="handleBuyNum">-</button>
+            <text>{{buyNum}}</text>
+            <button data-type="add" catch:tap="handleBuyNum">+</button>
+          </view>
+        </view>
+        <button bindtap="submit">立即购买</button>
+      </view>
+    </view>
+  </popup-bottom>
+  <!-- 优惠卷 -->
+  <popup-bottom show="{{couponPopupShow}}" bind:close="hideModal">
+    <view class="coupon-popup">
+      <view class="popups-title">
+        <view class="title-popup">领取优惠卷</view>
+        <view class="right-popup">
+          <image src="../../static/images/sysm.png"></image>
+          <text>使用说明</text>
+        </view>
+      </view>
+      <view class="coupon-list">
+        <view class="coupon-item" wx:for="{{coupons}}">
+          <view class="money">
+            <image src="../../static/images/coupon-2.png"></image>
+            <view class="price">
+              <text>￥</text>
+              <text>{{item.denomination}}</text>
+            </view>
+            <text class="p">{{item.couponName}}</text>
+          </view>
+          <view class="coupon-info">
+            <view class="title">{{item.couponName}}</view>
+            <view class="date">
+              有效期：{{item.useList.effectiveUseBeginDate}} 至 {{item.useList.effectiveUseEndDate}}
+            </view>
+            <view class="msg">鸿萌蛋体验店 特定商品可用</view>
+          </view>
+          <button data-id="{{item.couponId}}" catch:tap="handleReceiveCoupon">立即领取</button>
+          <button class="has" wx:if="{{item.isCanReceive == 1}}">已领取</button>
+        </view>
+        <view class="coupon-item">
+          <view class="money">
+            <image src="../../static/images/coupon-2.png"></image>
+            <view class="price">
+              <text>￥</text>
+              <text>200</text>
+            </view>
+            <text class="p">满400元可用</text>
+          </view>
+          <view class="coupon-info">
+            <view class="title">商品满减券</view>
+            <view class="date">有效期：2021-03-01 至 2021-06-31</view>
+            <view class="msg">鸿萌蛋体验店 特定商品可用</view>
+          </view>
+          <button class="has">已领取</button>
+        </view>
+        <view class="coupon-item">
+          <view class="money">
+            <image src="../../static/images/coupon-2.png"></image>
+            <view class="price">
+              <text>￥</text>
+              <text>200</text>
+            </view>
+            <text class="p">满400元可用</text>
+          </view>
+          <view class="coupon-info">
+            <view class="title">商品满减券</view>
+            <view class="date">有效期：2021-03-01 至 2021-06-31</view>
+            <view class="msg">鸿萌蛋体验店 特定商品可用</view>
+          </view>
+          <button class="has">关注并领取</button>
+        </view>
+      </view>
+    </view>
+  </popup-bottom>
+  <!-- 卡券类型 -->
+  <popup-bottom show="{{cardPopupShow}}" bind:close="hideModal">
+    <view class="card-popup">
+      <view class="popups-title">
+        <view class="title-popup">选择卡片类型</view>
+        <view class="right-popup">
+          <image bindtap="hideModal" class="close" src="../../static/images/popup-close.png"></image>
+        </view>
+      </view>
+      <view class="card-list">
+        <view class="card-item" data-type="dzkSpecsList" catch:tap="handleCard">
+          <image src="../../static/images/card-bg-1.png"></image>
+        </view>
+        <view class="card-item" data-type="stkSpecsList" catch:tap="handleCard">
+          <image src="../../static/images/card-bg-2.png"></image>
+        </view>
+      </view>
+    </view>
+  </popup-bottom>
+  <!-- 卡片规格 -->
+  <popup-bottom show="{{completePopupShow}}" bind:close="hideModal">
+    <view class="complete-wrap">
+      <view class="popups-title">
+        <view class="title-popup" wx:if="{{mainCardType == 'stkSpecsList'}}">请选择实体提货卡规格</view>
+        <view class="title-popup" wx:if="{{mainCardType == 'dzkSpecsList'}}">请选择电子提货卡规格</view>
+      </view>
+      <view class="popup-wrap">
+        <view class="info-wrap">
+          <image src="https://p0.ssl.img.360kuai.com/t013fd0b0ad9d0d8a48.webp"></image>
+          <view class="info">
+            <view class="title">{{goodsInfo.products.productsName}}</view>
+            <view class="price">
+              <text>¥</text>
+              <text>{{mainCard[mainActiveId].denomination}}</text>
+            </view>
+            <view class="p">可用于 {{goodsInfo.products.productsName}} 商品提货</view>
+            <view class="p">库存：{{mainCard[mainActiveId].surplusNumber}}</view>
+          </view>
+        </view>
+        <view class="popups-title">
+          <view class="title-popup">规格</view>
+        </view>
+        <view class="complete-list">
+          <view class="complete-item {{mainActiveId == index ? 'complete-item-active' : ''}}" wx:for="{{mainCard}}" data-index="{{index}}"  catch:tap="handleMainCardActive">
+            <text>{{item.giftCardName}}</text>
+            <text>{{item.specsName}}</text>
+            <text wx:if="{{item.usefulLifeType == 1}}">不限时</text>
+            <text wx:if="{{item.usefulLifeType == 2}}">
+              {{item.beginDate}} - {{item.endDate}}可用
+            </text>
+            <text wx:if="{{item.usefulLifeType == 3}}">激活后{{item.useDeadlineDays}}天可用</text>
+          </view>
+        </view>
+        <view class="number">
+          <view class="leftg">
+            <view class="popup-title">数量</view>
+            <text class="p">每位用户限购{{item.surplusNumber}}件</text>
+          </view>
+          <view class="num-action">
+            <button data-type="jian" data-num="{{item.surplusNumber}}" catch:tap="handleCardNum">-</button>
+            <text>{{cardNum}}</text>
+            <button data-type="add" data-num="{{item.surplusNumber}}"  catch:tap="handleCardNum">+</button>
+          </view>
+        </view>
+      </view>
+    </view>
+  </popup-bottom>
+</view>

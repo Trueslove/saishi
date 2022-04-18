@@ -1,0 +1,37 @@
+.apply-item {
+    padding: 20rpx 24rpx;
+}
+
+.apply-item .title {
+    display: flex;
+    align-items: center;
+    padding: 0 14rpx;
+}
+
+.apply-item .title text {
+
+    font-size: 24rpx;
+    font-family: PingFang SC-Medium, PingFang SC;
+    font-weight: 500;
+    color: #858585;
+}
+
+.apply-item .title text:first-of-type {
+    flex: 1;
+}
+
+.apply-item .title text:last-of-type {
+    font-size: 24rpx;
+    font-family: PingFang SC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #B2B2B2;
+}
+
+.apply-item input {
+    background: #F7F7F7;
+    height: 72rpx;
+    line-height: 72rpx;
+    padding: 0 18rpx;
+    margin-top: 18rpx;
+    border-radius: 10rpx;
+}

@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "d-audio": "/commpents/audio/index"
+  }
+}

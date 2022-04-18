@@ -1,0 +1,83 @@
+<view class="user-awards-page">
+    <view class="user-wrap">
+        <image class="user-bg" src="../../static/images/user-bg.png"></image>
+        <view class="user-info">
+            <navigator url="/pages/editUser/index" class="avatar">
+                <image src="{{imageUrl}}{{userInfo.portraitUrl}}"></image>
+            </navigator>
+            <view class="user-name">
+                <text>{{userInfo.userName}}</text>
+            </view>
+        </view>
+        <view class="text">
+            <image src="../../static/images/awards.png" alt="" />
+            获得<text>{{list.length}}</text>个奖项
+        </view>
+    </view>
+    <view class="awards-list">
+        <navigator wx:for="{{list}}" url="/pages/user_certificate/index" hover-class="none" class="item">
+            <view class="cover">
+                <image src="{{imageUrl}}{{item.icon}}"></image>
+            </view>
+            <view class="info">
+                <view class="title">{{item.certificateName}}</view>
+                <view class="msg-wrap">
+                    <view class="msg">
+                        <text>参与活动：{{item.activityName}}</text>
+                        <text>作品名称：{{item.enrollWorkName}}</text>
+                    </view>
+                    <button data-id="{{item.performanceActivityEnrollWorkId}}" bindtap="go">点击查看</button>
+                </view>
+                <view class="date">获得时间：{{item.issueTime}}</view>
+            </view>
+        </navigator>
+        <!-- <navigator url="/pages/user_certificate/index" hover-class="none" class="item">
+            <view class="cover">
+                <image src="../../static/images/awards-icon-2.png"></image>
+            </view>
+            <view class="info">
+                <view class="title">突出奖</view>
+                <view class="msg-wrap">
+                    <view class="msg">
+                        <text>参与活动：“青少年摄影”</text>
+                        <text>作品名称：“绘画”</text>
+                    </view>
+                    <button>点击查看</button>
+                </view>
+                <view class="date">获得时间：2021.04.23 18:30</view>
+            </view>
+        </navigator>
+        <navigator class="item" url="/pages/user_certificate/index" hover-class="none">
+            <view class="cover">
+                <image src="../../static/images/awards-icon-3.png"></image>
+            </view>
+            <view class="info">
+                <view class="title">第一名</view>
+                <view class="msg-wrap">
+                    <view class="msg">
+                        <text>参与活动：“青少年摄影”</text>
+                        <text>作品名称：“绘画”</text>
+                    </view>
+                    <button>点击查看</button>
+                </view>
+                <view class="date">获得时间：2021.04.23 18:30</view>
+            </view>
+        </navigator>
+        <navigator class="item">
+            <view class="cover">
+                <image src="../../static/images/awards-icon-4.png"></image>
+            </view>
+            <view class="info">
+                <view class="title">鼓励奖</view>
+                <view class="msg-wrap">
+                    <view class="msg">
+                        <text>参与活动：“青少年摄影”</text>
+                        <text>作品名称：“绘画”</text>
+                    </view>
+                    <button bindtap="go">点击查看</button>
+                </view>
+                <view class="date">获得时间：2021.04.23 18:30</view>
+            </view>
+        </navigator> -->
+    </view>
+</view>

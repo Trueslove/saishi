@@ -1,0 +1,65 @@
+<view class="user-work-page">
+    <view class="user-wrap">
+        <image class="user-bg" src="../../static/images/user-bg.png"></image>
+        <view class="user-info">
+            <navigator url="/pages/editUser/index" class="avatar">
+                <image src="{{imageUrl}}{{userInfo.portraitUrl}}"></image>
+            </navigator>
+            <view class="user-name">
+                <text>{{userInfo.userName}}</text>
+            </view>
+        </view>
+        <view class="text">
+            <image src="../../static/images/work.png" alt="" />
+            共上传<text>{{list.length}}</text>个作品
+        </view>
+    </view>
+
+    <view class="work-list">
+        <navigator wx:for="{{list}}" wx:key="{{index}}" url="/pages/playerUserInfo/index?id={{item.performanceActivityEnrollId}}" hover-class="none" class="item">
+            <view class="cover">
+                <image src="https://img1.baidu.com/it/u=1376324071,162125697&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500"></image>
+            </view>
+            <view class="info">
+                <text class="title">{{item.enrollWorkName}}</text>
+                <text>{{item.oneGroupName}}-{{item.twoGroupName}}</text>
+                <view class="date">更新时间：{{item.zpUpdateTime}}</view>
+            </view>
+        </navigator>
+        <!-- 视频 -->
+        <!-- <navigator url="/pages/playerUserInfo/index" hover-class="none" class="item">
+            <view class="cover">
+                <image class="icon-photo" src="../../static/images/video.png"></image>
+                <image src="https://img1.baidu.com/it/u=1376324071,162125697&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500"></image>
+            </view>
+            <view class="info">
+                <text class="title">《蓝天白云》</text>
+                <text>小学组-五年级</text>
+                <view class="date">更新时间：2021.04.23</view>
+            </view>
+        </navigator> -->
+        <!-- <navigator url="/pages/playerUserInfo/index" hover-class="none" class="item">
+            <view class="cover">
+                <image class="icon-photo" src="../../static/images/mp3.png"></image>
+                <text>mp3</text>
+            </view>
+            <view class="info">
+                <text class="title">《蓝天白云》</text>
+                <text>小学组-五年级</text>
+                <view class="date">更新时间：2021.04.23</view>
+            </view>
+        </navigator>
+        <navigator url="/pages/playerUserInfo/index" hover-class="none" class="item">
+            <view class="cover">
+                <image class="icon-photo" src="../../static/images/wj.png"></image>
+            </view>
+            <view class="info">
+                <text class="title">《蓝天白云》</text>
+                <text>小学组-五年级</text>
+                <view class="date">更新时间：2021.04.23</view>
+            </view>
+        </navigator> -->
+
+    </view>
+
+</view>

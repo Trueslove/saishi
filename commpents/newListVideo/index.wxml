@@ -1,0 +1,7 @@
+<navigator hover-class="none" url="/pages/newsDetail/index" class="news-item-video">
+    <view class="title">从谷爱凌到苏翊鸣，冬奥会里00后个个是从谷爱凌到苏翊鸣，冬奥会里00后个个是...</view>
+    <video src="https://klxxcdn.oss-cn-hangzhou.aliyuncs.com/histudy/hrm/media/bg3.mp4"></video>
+    <view class="news-bottom">
+        <view class="left">平台通知</view>
+    </view>
+</navigator>

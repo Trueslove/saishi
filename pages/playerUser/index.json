@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "audio": "/commpents/audio/index",
+    "customer-service": "/commpents/customerService/index"
+    
+  },
+  "navigationBarBackgroundColor": "#F7F7F7"
+}

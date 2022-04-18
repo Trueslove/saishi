@@ -1,0 +1,43 @@
+.apply-item {
+    padding: 20rpx 24rpx;
+}
+
+.apply-item .title {
+    display: flex;
+    align-items: center;
+}
+
+.apply-item .title text {
+
+    font-size: 24rpx;
+    font-family: PingFang SC-Medium, PingFang SC;
+    font-weight: 500;
+    color: #858585;
+}
+
+
+
+.ellipse-d-item {
+    background: #F7F7F7;
+    border-radius: 10rpx;
+    display: flex;
+    padding: 18rpx 0;
+    padding-left: 16rpx;
+    margin-top: 14rpx;
+    box-sizing: border-box;
+  }
+  
+  .ellipse-d-item image {
+    width: 32rpx;
+    height: 32rpx;
+    margin-right: 10rpx;
+    margin-top: 4rpx;
+  }
+  
+  .ellipse-d-item text {
+    font-size: 28rpx;
+    font-family: PingFang SC-Medium, PingFang SC;
+    font-weight: 500;
+    color: #121314;
+    flex: 1;
+  }

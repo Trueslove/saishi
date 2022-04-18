@@ -1,0 +1,49 @@
+@import "../../wxParse/wxParse.wxss";
+.news-bottom {
+    display: flex;
+    align-items: center;
+    margin-top: 12rpx;
+}
+
+.news-bottom .left,
+.news-bottom .right {
+    color: #B2B2B2;
+    font-size: 20rpx;
+    font-weight: 400;
+}
+
+.news-bottom .left {
+    flex: 1;
+}
+
+.news-detail-page {
+    padding: 0 24rpx;
+    background: #fff;
+    min-height: 100vh;
+}
+
+.title-wrap {
+    padding-top: 40rpx;
+    padding-bottom: 24rpx;
+    font-size: 40rpx;
+    font-weight: 500;
+    color: rgba(18, 19, 20, 0.93);
+    line-height: 47rpx;
+}
+
+.news-detail-page p,
+.news-detail-page span {
+    font-size: 28rpx;
+    color: #121314;
+    font-weight: 400;
+    font-family: PingFang SC-Regular, PingFang SC;
+    padding-bottom: 40rpx;
+    display: inline-block;
+}
+
+.news-detail-page img,
+.news-detail-page image,
+.news-detail-page video {
+    width: 100%;
+    margin-bottom: 40rpx;
+}

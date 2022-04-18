@@ -1,0 +1,28 @@
+<view class="search-page">
+  <view class="search-wrap">
+    <view class="search-input">
+      <image src="../../static/images/search.png" class="search-icon"></image>
+      <input bindconfirm="searchActivity" focus type="text" value="{{searchValue}}" bindinput="onInput" placeholder="搜索" />
+      <image catchtap="clearSearchValue" wx:if="{{searchValue.length > 0}}" src="../../static/images/close.png" class="close"></image>
+    </view>
+    <button bindtap="goBlack">取消</button>
+  </view>
+  <view class="search-history">
+    <view class="title" wx:if="{{!isSearch}}">
+      <text>#</text>热门搜索
+    </view>
+    <view class="history"  wx:if="{{!isSearch}}">
+      <!-- <view class="history-item" bindtap="clickSearch" data-target="{{item.name}}" wx:for="{{hotList}}" wx:item="index" wx:index="index" wx:key="{{index}}">{{item.name}}</view> -->
+      <view class="history-item">博鳌</view>
+      <view class="history-item">艺术节</view>
+    </view>
+  </view>
+  <view class="null" wx:if="{{list.length <= 0 && isSearch}}">
+    <text>抱歉，未找到相关信息</text>
+  </view>
+  <view class="result" wx:else>
+    <activity-item wx:for="{{list}}" wx:item="item" wx:index="index" wx:key="{{index}}" item="{{item}}" type="search"></activity-item>
+  </view>
+
+
+</view>

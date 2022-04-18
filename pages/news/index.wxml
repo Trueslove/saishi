@@ -1,0 +1,18 @@
+<view class="news-page">
+    <!-- 标题  -->
+    <list-title title="新闻资讯" message="赛事展演最新消息同步更新" />
+    <!-- 列表 -->
+    <view class="list">
+        <view wx:for="{{list}}" wx:item="{{item}}" wx:key="{{index}}">
+            <new-list-item-a wx:if="{{!item.coverPic}}" item="{{item}}" />
+            <new-list-item-b wx:else item="{{item}}" />
+        </view>
+
+
+        <!-- <new-list-video />
+        <new-list-video />
+        <new-list-video />
+        <new-list-video />
+        <new-list-video /> -->
+    </view>
+</view>

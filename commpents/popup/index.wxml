@@ -1,0 +1,13 @@
+<view class="popup-con" wx:if="{{show}}" >
+    <view class="popup-con-wrap">
+        <view class="popup-wrap" style="width: {{width}};">
+            <slot></slot>
+        </view>
+
+        <view class="close" catchtap="close">
+            <image src="../../static/images/close.png"></image>
+        </view>
+    </view>
+
+
+</view>

@@ -1,0 +1,15 @@
+<view class="address-page">
+    <navigator class="item" wx:for="{{addressList}}" url="/pages/editAddress/index?id={{item.id}}&url={{url}}">
+        <view class="info">
+            <view class="name">
+                <text class="default" wx:if="{{item.isDefault}}">默认</text>
+                {{item.name}} {{item.cellphone}}
+            </view>
+            <text class="address">{{item.province}} {{item.city}} {{item.area}} {{item.detailsAddress}}</text>
+        </view>
+        <image class="edit" src="../../static/images/edit.png"></image>
+    </navigator>
+    <navigator url="/pages/editAddress/index" class="add">
+        <image src="../../static/images/add-address.png"></image>
+    </navigator>
+</view>

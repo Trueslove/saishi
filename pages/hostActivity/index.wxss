@@ -1,0 +1,91 @@
+.host-activity-page {
+  background: #F7F7F7;
+  min-height: 100vh;
+}
+
+.host-activity-page .top {}
+
+.host-activity-page .top .bg {
+  height: 360rpx;
+  z-index: 0;
+  position: relative;
+  width: 100%;
+}
+
+.host-activity-page .top .bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, rgba(248, 248, 248, 0.97) 0%, rgba(248, 248, 248, 0) 100%);
+}
+
+.host-activity-page .top .host-user {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 18rpx;
+
+  justify-content: center;
+  background: #fff;
+  margin-top: -122rpx;
+  z-index: 1;
+}
+
+.host-activity-page .top .host-user image {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 160rpx;
+  border: 2px solid #FFFFFF;
+  background: #F8F8F8;
+  margin-top: -120rpx;
+  margin-bottom: 20rpx;
+
+}
+
+.host-activity-page .top .host-user text {
+  font-size: 34rpx;
+  font-family: PingFang SC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #121314;
+}
+
+.host-activity-page .top .host-user .msg {
+  margin-top: 20rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #121314;
+  margin-bottom: 40rpx;
+  padding: 0 24rpx;
+}
+
+
+.host-activity-page .list {
+  background: #F7F7F7;
+  position: relative;
+  padding-top: 40rpx;
+  margin-top: -18rpx;
+  border-top-left-radius: 18rpx;
+  border-top-right-radius: 18rpx;
+  z-index: 2;
+}
+
+.host-activity-page .list .title {
+  margin-left: 52rpx;
+  font-size: 34rpx;
+  font-family: PingFang SC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #121314;
+}
+
+.host-activity-page .list .title text {
+  color: #FE7405;
+  font-size: 34rpx;
+  font-family: PingFang SC-Medium, PingFang SC;
+  font-weight: 500;
+  padding-right: 10rpx;
+}

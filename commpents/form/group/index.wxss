@@ -1,0 +1,40 @@
+.apply-item .group-item {
+  height: 72rpx;
+  background: #F7F7F7;
+  border-radius: 10rpx;
+  display: flex;
+  align-items: center;
+  margin: 0 24rpx;
+  margin-bottom: 20rpx;
+  padding-left: 18rpx;
+  margin-top: 14rpx;
+}
+
+.apply-item .title text {
+  font-size: 24rpx;
+  font-family: PingFang SC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #B2B2B2;
+  padding-left: 40rpx;
+}
+
+.apply-item .add text {
+  color: #707177 !important;
+}
+
+.apply-item .group-item text {
+  font-size: 28rpx;
+  font-family: PingFang SC-Medium, PingFang SC;
+  font-weight: 500;
+
+  color: #121314;
+}
+
+.add {
+  align-items: center;
+  justify-content: center;
+}
+
+.borderBottom {
+  border-bottom: 16rpx solid #f7f7f7;
+}

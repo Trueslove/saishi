@@ -1,0 +1,7 @@
+<view class="apply-item apply-item-btn">
+    <view class="title">
+      <text>{{name}}</text>
+      <text>请至少输入3个文字</text>
+    </view>
+    <textarea placeholder="{{placeholder}}" value="{{value}}" cols="30" rows="10" bindinput="changeInput"></textarea>
+  </view>

@@ -1,0 +1,9 @@
+
+.news-page {
+
+}
+
+.news-page .list {
+    padding: 0 28rpx;
+    padding-bottom: 100rpx;
+}

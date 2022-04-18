@@ -1,0 +1,7 @@
+<view class="apply-item">
+    <view class="title">
+        <text>{{name}}</text>
+        <text wx:if="{{type == 'input' && maxWordLimit}}">请至少输入{{maxWordLimit}}个文字</text>
+    </view>
+    <input type="text" placeholder="{{placeholder}}" value="{{value}}" bindinput="changeInput"/>
+</view>

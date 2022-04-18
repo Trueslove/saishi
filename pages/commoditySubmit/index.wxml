@@ -1,0 +1,96 @@
+<view class="commodity-submit-page">
+    <view class="tips" wx:if="{{goodsInfo.yunfeiMsg.type == 3}}">当前地址暂不支持配送，请更换收货地址</view>
+    <view class="address">
+        <image class="address-img" src="../../static/images/address-detail.png"></image>
+        <view class="info">
+            <view class="info-top">
+                <view class="label">默认</view>
+                <text>{{goodsInfo.userDefaultAddress.name}} {{goodsInfo.userDefaultAddress.cellphone}}</text>
+            </view>
+            <text>{{goodsInfo.userDefaultAddress.province}} {{goodsInfo.userDefaultAddress.city}} {{goodsInfo.userDefaultAddress.area}} {{goodsInfo.userDefaultAddress.detailsAddress}}</text>
+        </view>
+        <image class="arrow" src="../../static/images/arrow-black.png"></image>
+    </view>
+    <view class="detail">
+        <view class="title">
+            <image class="dp" src="../../static/images/dp.png"></image>
+            <text>{{goodsInfo.serviceProduct.resourceName}}</text>
+            <image class="arrow" src="../../static/images/arrow-black.png"></image>
+        </view>
+        <view class="detail-commodity">
+            <image src="{{imageUrl}}{{goodsInfo.serviceProduct.portraitUrl[0].url}}"></image>
+            <view class="info-right">
+                <text>{{goodsInfo.serviceProduct.productsName}}</text>
+                <text>{{goodsInfo.serviceProduct.serviceDetails}}</text>
+                <text class="price">¥{{goodsInfo.serviceProduct.chargeAmount}}</text>
+                <view class="bottom">
+                    <view class="price-new">¥{{goodsInfo.serviceProduct.payAmount}} <image wx:if="{{goodsInfo.serviceProduct.isVipPlus}}" src="../../static/images/plus.png"></image>
+                    </view>
+                    <view class="num">
+                        <button data-type="jian" catch:tap="handleBuyNum">-</button>
+                        <text>{{buyNum}}</text>
+                        <button data-type="add" catch:tap="handleBuyNum">+</button>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="label-wrap">
+            <view class="label">{{goodsInfo.serviceProduct.refundMechanisName}}</view>
+            <view class="label">每位用户限购{{goodsInfo.serviceProduct.limitBuyNum}}件</view>
+        </view>
+    </view>
+    <view class="list-w">
+        <view class="item-w">
+            <text>应付总额：</text>
+            <view class="right">
+                <text>¥{{goodsInfo.serviceProduct.payAmount * buyNum}}</text>
+            </view>
+
+        </view>
+        <view class="item-w" bindtap="goCoupon">
+            <text>优惠券：</text>
+            <view class="right">
+                <text class="red">-¥60000.00</text>
+            </view>
+            <image class="arrow" src="../../static/images/red-arrow.png"></image>
+        </view>
+        <view class="item-w" bindtap="goCard">
+            <text>礼品卡：</text>
+            <view class="right">
+                <text class="red">-¥60000.00</text>
+            </view>
+            <image class="arrow" src="../../static/images/red-arrow.png"></image>
+        </view>
+
+        <view class="item-w">
+            <text>运费：</text>
+            <view class="right">
+                <text>¥{{goodsInfo.yunfeiMsg.content.amount}}</text>
+            </view>
+        </view>
+        <view class="item-w border-bottom-20">
+            <text class="blod">实付：</text>
+            <view class="right">
+                <text class="blod red size">¥{{goodsInfo.serviceProduct.chargeAmount}}</text>
+            </view>
+        </view>
+
+        <view class="input-item">
+            <text>备注：</text>
+            <input type="text" placeholder="您可以在这里输入备注" />
+        </view>
+        <view class="input-item">
+            <text>身份证号：</text>
+            <input type="text" placeholder="您可以在这里输入身份证号码" />
+        </view>
+    </view>
+
+    <view class="action">
+        <view class="left">
+            <text>实付：</text>
+            <text>¥{{goodsInfo.serviceProduct.chargeAmount}}</text>
+        </view>
+        <button bindtap="submit">提交订单</button>
+        <!-- <button class="null">提交订单</button> -->
+    </view>
+</view>

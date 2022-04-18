@@ -1,0 +1,33 @@
+<view class="message-page">
+  <view class="message-wrap">
+    <view class="title">
+      通知列表
+      <text wx:if="{{noReadNum}}">{{noReadNum}}</text>
+    </view>
+    <view class="right {{noReadNum ? 'read' : ''}}" data-type="all" bind:tap="handleRead">全部已读</view>
+  </view>
+  <view class="list">
+    <view wx:for="{{list}}" wx:key="index">
+      <navigator url="/pages/chat/index" hover-class="none" wx:if="{{item.businessType == 2}}" data-read="{{item.isRead}}" data-id="{{item.id}}" bind:tap="handleRead" class="item">
+        <image class="avatar" src="../../static/images/message-2.png"></image>
+        <view class="item-right">
+          <view class="title">
+            <text>{{item.msgTitle}}</text>
+            <text>{{item.createTime}}</text>
+          </view>
+          <view class="message">{{item.msgContent}}</view>
+        </view>
+      </navigator>
+      <view class="item" wx:else data-read="{{item.isRead}}" data-id="{{item.id}}" bind:tap="handleRead">
+        <image class="avatar" src="../../static/images/message-1.png"></image>
+        <view class="item-right">
+          <view class="title">
+            <text>{{item.msgTitle}}</text>
+            <text>{{item.createTime}}</text>
+          </view>
+          <view class="message">{{item.msgContent}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

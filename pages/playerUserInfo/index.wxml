@@ -1,0 +1,40 @@
+<view class="player-userinfo-page">
+    <view class="wrap">
+        <view class="userinfo">
+            <!-- <image src="{{avatar}}"></image> -->
+            <image src="{{imageUrl}}{{uploadUrl[0].url}}"></image>
+            <text class="name">{{name}}</text>
+            <text>选手编号：{{dataInfo.enrollNumber}}</text>
+        </view>
+        <view class="user-info-list">
+            <block wx:for="{{dataInfo.forms}}" wx:item="item" wx:index="index" wx:key="{{index}}">
+                <view class="title">{{item.title}}</view>
+                <view wx:if="{{item.type == 'uploadPic' || item.type == 'uploadPic_enroll_preset'}}">
+                    <image wx:for="{{item.answerMsg.answer}}" wx:for-item="child" wx:index="key" wx:key="{{key}}" src="{{imageUrl}}{{child.url}}"></image>
+                </view>
+                <view wx:elif="{{item.type == 'uploadFile'}}">
+                    <view class="file" wx:for="{{item.answerMsg.answer}}" wx:for-item="child" wx:index="key">
+                        <image src="../../static/images/has-file.png"></image>
+                        <view class="file-info">
+                            <text>{{child.name}}</text>
+                            <text>{{child.size}}</text>
+                        </view>
+                        <button bindtap="donwload" data-name="{{child.name}}" data-url="{{child.url}}">
+                            <image src="../../static/images/download.png"></image>
+                            <text>下载文件</text>
+                        </button>
+                    </view>
+                </view>
+                <view wx:elif="{{item.type == 'uploadAudio'}}">
+                    <d-audio wx:for="{{item.answerMsg.answer}}" wx:for-item="child" wx:index="key" wx:key="{{key}}" item="{{child}}"></d-audio>
+                </view>
+                <view wx:elif="{{item.type == 'uploadVideo'}}">
+                    <video wx:for="{{item.answerMsg.answer}}" wx:for-item="child" wx:index="key" wx:key="{{key}}" src="{{imageUrl}}{{child.url}}"></video>
+                </view>
+                <view wx:else>
+                    <text class="msg">{{item.answerMsg.answer}}</text>
+                </view>
+            </block>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "apply-input" : "/commpents/form/input/input",
+    "apply-select" : "/commpents/form/select/index",
+    "apply-upload": "/commpents/form/upload/index",
+    "apply-textarea": "/commpents/form/textarea/index",
+    "apply-group": "/commpents/form/group/index"
+    
+
+  }
+}

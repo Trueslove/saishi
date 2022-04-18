@@ -1,0 +1,13 @@
+<import src="../../wxParse/wxParse.wxml"/>
+<view class="news-detail-page">
+    <view class="title-wrap">
+        <text class="title">{{detail.title}}</text>
+        <view class="news-bottom">
+            <text class="left">{{detail.categoryName}}</text>
+            <text class="right">{{detail.specifyReleaseTime}}</text>
+        </view>
+    </view>
+    <template is="wxParse" data="{{ wxParseData: newsContent.nodes }}"/>
+
+    <!-- <rich-text nodes="{{detail.newsContent}}"></rich-text> -->
+</view>

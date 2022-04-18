@@ -1,0 +1,123 @@
+.edit-address {
+    min-height: 100vh;
+    background: #f7f7f7;
+}
+
+.edit-item {
+    background: #fff;
+    display: flex;
+    align-items: center;
+    height: 120rpx;
+    line-height: 12rpx;
+    display: flex;
+    align-items: center;
+    padding: 0 36rpx;
+    border-bottom: 1px solid #DCDCDE;
+}
+
+.edit-item text {
+    color: #464B52;
+    font-size: 28rpx;
+    font-family: PingFang HK-Medium, PingFang HK;
+    font-weight: 500;
+    display: inline-block;
+    width: 132rpx;
+}
+
+.edit-item input:placeholder {
+    color: #8A8A8A;
+}
+
+.edit-item input {
+    color: #464B52;
+    flex: 1;
+    font-size: 28rpx;
+
+    font-family: PingFang HK-Regular, PingFang HK;
+    font-weight: 400;
+}
+
+.edit-item image {
+    width: 14rpx;
+    height: 24rpx;
+}
+
+.edit-item .default {
+    color: #464B52;
+    font-weight: 500;
+    font-size: 28rpx;
+    font-family: PingFang HK-Medium, PingFang HK;
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.edit-item .default text {
+    color: #464B52;
+    font-size: 28rpx;
+    font-family: PingFang HK-Medium, PingFang HK;
+    font-weight: 500;
+    flex: 1;
+    display: inline-block;
+    width: unset !important;
+    padding-left: 12rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+}
+
+.edit-item .default .checkbox {
+    width: 40rpx;
+    height: 40rpx;
+    border: 1px solid #A5A5A5;
+    border-radius: 50rpx;
+}
+
+.set {
+    background: var(--themeColor);
+    border: 1px solid var(--themeColor) !important;
+    position: relative;
+}
+
+.set::before {
+    content: '';
+    position: absolute;
+    top: 17rpx;
+    left: 10rpx;
+    width: 4rpx;
+    height: 12rpx;
+    background: #fff;
+    transform: rotate(-40deg);
+
+}
+
+.set::after {
+    content: '';
+    position: absolute;
+    top: 7rpx;
+    left: 20rpx;
+    width: 4rpx;
+    height: 25rpx;
+    background: #fff;
+    transform: rotate(215deg);
+
+}
+
+.edit-item button {
+    width: 180rpx;
+    height: 68rpx;
+    color: #fff;
+    background: var(--themeColor);
+    border-radius: 12rpx;
+    line-height: 68rpx;
+    padding: 0;
+    font-size: 26rpx;
+    font-family: PingFang HK-Medium, PingFang HK;
+    font-weight: 500;
+}
+
+.edit-item .del {
+    color: var(--themeColor);
+    background: #F5F5F5;
+    margin-right: 16rpx;
+}

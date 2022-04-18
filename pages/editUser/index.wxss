@@ -1,0 +1,57 @@
+
+.user-page {
+    min-height: 100vh;
+    background: #F8F8F8;
+}
+
+.user-page .user-item {
+    display: flex;
+    align-items: center;
+    padding: 38rpx 24rpx;
+    background: #fff;
+}
+
+.user-page .user-item text {
+    color: #858585;
+    font-weight: 500;
+    font-size: 28rpx;
+    font-family: PingFang SC-Medium, PingFang SC;
+}
+
+.user-page .user-item .content {
+    flex: 1;
+    text-align: right;
+    color: #B2B2B2;
+    font-size: 28rpx;
+    font-weight: 500;
+    font-family: PingFang SC-Medium, PingFang SC;
+}
+
+.user-page .user-item image {
+    width: 14rpx;
+    height: 24rpx;
+    margin-left: 22rpx;
+}
+
+
+.border-bottom {
+    border-bottom: 16rpx solid #F8F8F8;
+}
+
+.user-item .upload {
+    width: 180rpx !important;
+    height: 180rpx !important;
+}
+
+.upload-item {
+    padding: 20rpx 24rpx !important;
+    align-items: flex-start !important;
+}
+.upload-item text {
+    margin-top: 9rpx !important;
+    flex: unset !important;
+}
+
+.user-item:last-of-type text {
+    flex: 1;
+}

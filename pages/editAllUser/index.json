@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "d-button": "/commpents/Button/index"
+  },
+  "navigationBarTitleText": "修改姓名",
+  "navigationBarBackgroundColor": "#f7f7f7"
+}

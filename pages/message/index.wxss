@@ -1,0 +1,110 @@
+.message-page {}
+
+.message-wrap {
+  padding: 40rpx 32rpx;
+  background: #f7f7f7;
+  display: flex;
+  align-items: center;
+}
+
+.message-wrap .title {
+  color: #121314;
+  font-size: 34rpx;
+  font-weight: 500;
+  font-family: PingFang SC-Medium, PingFang SC;
+  position: relative;
+}
+
+.message-wrap .title text {
+  color: #fff;
+  font-size: 20rpx;
+  font-weight: 500;
+  font-family: PingFang SC-Medium, PingFang SC;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -38rpx;
+  background: #F40E0E;
+  height: 24rpx;
+  line-height: 24rpx;
+  padding: 0 6rpx;
+  border-radius: 24rpx;
+}
+.message-wrap .read {
+}
+
+
+.message-wrap .right {
+  flex: 1;
+  text-align: right;
+  color: var(--themeColor);
+  font-size: 24rpx;
+  font-weight: 400;
+  font-family: PingFang SC-Regular, PingFang SC;
+}
+
+.message-page .list {
+  background: #F7F7F7;
+  min-height: calc(100vh - 88px);
+}
+
+.message-page .item {
+  display: flex;
+  padding: 26rpx 24rpx;
+  padding-bottom: 0;
+}
+
+.message-page .item:active {
+  background: var(--bgThemeColor) !important;
+  color: #73777E !important;
+}
+
+.message-page .item .avatar {
+  width: 48rpx;
+  height: 48rpx;
+  margin-top: 16rpx;
+}
+
+.message-page .item .item-right {
+  margin-left: 14rpx;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.message-page .item .item-right .title {
+  color: #121314;
+  font-size: 28rpx;
+  font-weight: 500;
+  font-family: PingFang SC-Medium, PingFang SC;
+  display: flex;
+  align-items: center;
+}
+
+.message-page .item .item-right .title text:first-of-type {
+  color: #121314;
+  font-size: 28rpx;
+  font-weight: 500;
+  font-family: PingFang SC-Medium, PingFang SC;
+  flex: 1;
+}
+
+.message-page .item .item-right .title text:last-of-type {
+  font-size: 22rpx;
+  font-weight: 400;
+  font-family: PingFang SC-Regular, PingFang SC;
+  color: #121314;
+}
+
+.message-page .item .item-right .message {
+  margin-top: 4rpx;
+  color: #73777E;
+  font-size: 24rpx;
+  font-weight: 400;
+  font-family: PingFang SC-Regular, PingFang SC;
+}
+
+.message-page .item .item-right {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 26rpx;
+}

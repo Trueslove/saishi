@@ -1,0 +1,118 @@
+.list-item {
+    display: flex;
+    padding-bottom: 16rpx;
+    border-bottom: 1px solid #E8E8E8;
+    margin: 0 24rpx;
+    padding-top: 16rpx;
+}
+
+.list-item:active {
+    background: transparent;
+}
+
+.list-item .cover {
+    width: 256rpx;
+    height: 168rpx;
+    border-radius: 10rpx;
+    margin-right: 12rpx;
+}
+
+.list-item .cover image {
+    width: 256rpx;
+    height: 168rpx;
+    border-radius: 10rpx;
+}
+
+.list-item .info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.list-item .info .title {
+    font-weight: 400;
+    font-size: 28rpx;
+    height: 80rpx;
+    display: inline-block;
+    color: #121314;
+    font-family: PingFang SC-Regular, PingFang SC;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.list-item .info .label-wrap {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+.list-item .info .label {
+    color: #B2B2B2;
+    font-size: 20rpx;
+    font-weight: 500;
+    font-family: PingFang SC-Medium, PingFang SC;
+    line-height: 22rpx;
+    margin-right: 10rpx;
+}
+
+
+.list-item .info button {
+    width: 134rpx;
+    height: 36rpx;
+    font-size: 20rpx;
+    line-height: 36rpx;
+    font-weight: 500;
+    padding: 0;
+    font-family: PingFang SC-Medium, PingFang SC;
+    margin: 0;
+    margin-top: 15rpx;
+}
+
+.list-item .info .status-0 {
+    color: #1345E2;
+    background: #EDF2FF;
+}
+
+.list-item .info .info-bottom {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.list-item .info .status-1 {
+    color: #FC2D00;
+    background: #FFF0EE;
+}
+
+.list-item .info .status-2 {
+    color: #00BF4D;
+    background: #ECFBF2;
+}
+
+.list-item .info .status-3 {
+    color: #B2B2B2;
+    background: #F8F8F8;
+}
+
+.search-bottom {
+    display: flex;
+    align-items: flex-end;
+    flex: 1;
+
+}
+
+.search-bottom .label {
+    margin: 0 !important;
+    flex: 1;
+    padding-bottom: 8rpx;
+}
+
+.search-bottom button {
+    margin: 0 !important;
+    background: var(--bgThemeColor);
+    color: var(--themeColor);
+    width: 134rpx !important;
+    height: 36rpx !important;
+    line-height: 36rpx !important;
+}

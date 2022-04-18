@@ -1,0 +1,69 @@
+<view class="apply-item" wx:if="{{type == 'uploadPic_enroll_preset' || type == 'uploadPic_works_preset' || type == 'uploadPic'}}">
+    <view class="title">
+        <view class="top">
+            <text>{{title}}</text>
+            <text wx:if="{{maxNumberLimit}}">{{list.length}}/{{maxNumberLimit}}</text>
+        </view>
+        <text class="tips" wx:if="{{tips}}">可上传jpg、png格式</text>
+    </view>
+    <view class="flex-wrap">
+        <view class="upload-wrap" bindtap="choosePhoto" data-index="{{index}}" wx:for="{{list}}" wx:key="index">
+            <!-- 确认报名展示 -->
+            <image class="upload" src="{{item.src}}" alt="" mode="aspectFit"/>
+        </view>
+        <view class="upload-wrap" bindtap="choosePhoto" data-index="" wx:if="{{list.length < maxNumberLimit}}">
+            <image class="upload" src="../../../static/images/upload.png" alt=""  />
+        </view>
+    </view>
+</view>
+
+<view class="apply-item" wx:if="{{type == 'uploadVideo' || type == 'user_works_preset' || type == 'uploadAudio' || type == 'user_works_preset' || type == 'uploadFile'}}">
+    <view class="title">
+        <view class="top">
+            <text>{{title}}</text>
+            <text wx:if="{{maxNumberLimit}}">{{list.length}}/{{maxNumberLimit}}</text>
+        </view>
+    </view>
+    <view class="flex-wrap">
+        <view class="upload-wrap" wx:for="{{list}}" wx:key="index">
+            <video
+            id="video{{index}}"
+            src="{{item.src}}"
+            data-url="{{item.src}}"
+            show-center-play-btn='{{true}}'
+            bindplay="videoPlay"
+            show-fullscreen-btn="{{false}}"
+            bindfullscreenchange="fullscreenchange"
+            ></video>
+            <!-- 确认报名展示 -->
+            <image class="upload" src="{{item.src}}" alt="" mode="aspectFit"/>
+        </view>
+        <view class="upload-wrap" bindtap="chooseVideo" data-index="" wx:if="{{list.length < maxNumberLimit}}">
+            <image class="upload" src="../../../static/images/uoload-video.png" alt=""/>
+        </view>
+    </view>
+</view>
+
+<view class="apply-item" wx:if="{{}}">
+    <view class="title">
+        <view class="top">
+            <text>{{title}}</text>
+            <text wx:if="{{maxNumberLimit}}">0/{{maxNumberLimit}}</text>
+        </view>
+    </view>
+    <view class="upload-wrap" bindtap="chooseVideo">
+        <image class="upload" src="../../../static/images/upload-mp3.png" alt="" />
+    </view>
+</view>
+
+<view class="apply-item borderBottom" wx:if="{{}}">
+    <view class="title">
+        <view class="top">
+            <text>{{title}}</text>
+            <text wx:if="{{maxNumberLimit}}">0/{{maxNumberLimit}}</text>
+        </view>
+    </view>
+    <view class="upload-file-wrap">
+        <image class="upload" src="../../../static/images/upload-file.png" alt="" />
+    </view>
+</view>

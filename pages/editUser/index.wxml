@@ -1,0 +1,30 @@
+<view class="user-page">
+    <navigator url="/pages/editAllUser/index?type=1&nickName={{userData.nickName}}" class="user-item">
+        <text>姓名：</text>
+        <text class="content">{{userData.nickName}}</text>
+        <image src="../../static/images/grey-arrow.png"></image>
+    </navigator>
+    <navigator url="/pages/editAllUser/index?type=2&sex={{userData.sex}}"  class="user-item">
+        <text>性别：</text>
+        <text class="content">{{userData.sex ? userData.sex == 1 ? '男' : '女' : '男'}}</text>
+        <image src="../../static/images/grey-arrow.png"></image>
+    </navigator>
+    <navigator url="/pages/editAllUser/index?type=4&birthday={{userData.birthday}}" class="user-item border-bottom">
+        <text>生日：</text>
+        <text class="content">{{userData.birthday || '无'}}</text>
+        <image src="../../static/images/grey-arrow.png"></image>
+    </navigator>
+    <view class="user-item border-bottom upload-item">
+        <text>头像：</text>
+        <image class="upload" src="{{imageUrl}}{{userData.portraitUrl}}"></image>
+    </view>
+    <navigator url="/pages/editAllUser/index?type=3&phone={{userData.cellphone}}"  class="user-item border-bottom">
+        <text>手机号绑定：</text>
+        <text class="content">{{userData.cellphone}}</text>
+        <image src="../../static/images/grey-arrow.png"></image>
+    </navigator>
+    <navigator class="user-item border-bottom" url="/pages/address/index">
+        <text>地址管理</text>
+        <image src="../../static/images/grey-arrow.png"></image>
+    </navigator>
+</view>

@@ -1,0 +1,56 @@
+<view class="form">
+    <view wx:for="{{formList}}" wx:key="index">
+        <!-- 输入框 input -->
+        <view class="form-cell-wap" wx:if="{{item.type === 'input'}}">
+            <view class="form-cell-top">
+                <text class="form-label">{{item.title}}</text>
+                <text class="form-value">请至少输入10个字</text>
+            </view>
+            <input data-key="{{item[valueKey]}}" value="{{formData[item[valueKey]]}}" bind:input="changeInput" class="form-input" type="text" placeholder="{{item.placeholder}}" placeholder-class="input-placeholder" />
+        </view>
+        <!-- 下拉框 -->
+        <view class="form-cell-wap" wx:if="{{item.type === 'select'}}">
+            <view class="form-cell-top">
+                <text class="form-label">{{item.title}}</text>
+            </view>
+            <view class="form-input form-arrow">
+                <picker mode="selector" data-key="{{item[valueKey]}}" bindchange="changeSelector" data-item="{{item.formOptions}}" value="{{formData[item[valueKey]]}}" range-key="optionText" range="{{item.formOptions}}">
+                    <view wx:if="{{formData[item[valueKey]]}}" class="input-placeholder">
+                        {{formData[item[valueKey]]}}
+                    </view>
+                    <view wx:else class="input-placeholder">{{item.placeholder}}</view>
+                </picker>
+            </view>
+        </view>
+        <!-- 单选框 -->
+        <view class="form-cell-wap" wx:if="{{item.type !== 'radio'}}">
+            <view class="form-cell-top">
+                <text class="form-label">{{item.title}}</text>
+            </view>
+            <view class="form-input" style="margin-bottom:20rpx">
+                <text class="form-radio form-radio-active"></text>
+                <text>自行布整</text>
+            </view>
+            <view class="form-input">
+                <text class="form-radio"></text>
+                <text>自行布整</text>
+            </view>
+            <view class="form-input">
+                <text class="form-radio form-radio-check"></text>
+                <text>自行布整</text>
+            </view>
+        </view>
+        <!-- 城市选择器 -->
+        <view class="form-cell-wap" wx:if="{{item.type === 'city'}}">
+            <view class="form-cell-top">
+                <text class="form-label">{{item.title}}</text>
+            </view>
+            <view class="form-input form-arrow">
+                <picker mode="region" data-key="{{item[valueKey]}}" bindchange="changeInput" value="{{formData[item[valueKey]] || []}}">
+                    <view class="input-placeholder"  wx:if="{{formData[item[valueKey]]}}">{{formData[item[valueKey]][0]}} {{formData[item[valueKey]][1]}} {{formData[item[valueKey]][2]}}</view>
+                    <view wx:else class="input-placeholder">{{item.placeholder}}</view>
+                </picker>
+            </view>
+        </view>
+    </view>
+</view>

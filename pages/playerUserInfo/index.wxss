@@ -1,0 +1,128 @@
+.player-userinfo-page {
+  padding-bottom: constant(safe-area-inset-bottom);
+  /*兼容 IOS<11.2*/
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.player-userinfo-page .wrap {
+  background: #fff;
+  margin: 26rpx 24rpx;
+  padding-bottom: 20rpx;
+  border-radius: 18rpx;
+}
+
+.player-userinfo-page .userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40rpx;
+  border-bottom: 1px solid #EFEFEF;
+  margin-left: 22rpx;
+  margin-right: 30rpx;
+}
+
+.player-userinfo-page .userinfo image {
+  width: 210rpx;
+  height: 210rpx;
+  border-radius: 210rpx;
+}
+
+.player-userinfo-page .userinfo .name {
+  font-size: 34rpx;
+  font-family: PingFang SC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #121314;
+  padding-top: 26rpx;
+}
+
+.player-userinfo-page .userinfo text:last-of-type {
+  font-size: 24rpx;
+  font-family: PingFang SC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #B2B2B2;
+  padding-top: 12rpx;
+  padding-bottom: 30rpx;
+}
+
+.player-userinfo-page .user-info-list {
+  margin: 0 28rpx;
+  margin-top: 36rpx;
+}
+
+.player-userinfo-page .user-info-list image,
+.player-userinfo-page .user-info-list video {
+  width: 100%;
+}
+
+.player-userinfo-page .user-info-list .title {
+  font-size: 20rpx;
+  font-family: PingFang SC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #858585;
+  margin-bottom: 12rpx;
+}
+
+.player-userinfo-page .user-info-list .msg {
+  display: block;
+  margin-bottom: 12rpx;
+}
+
+.player-userinfo-page .file {
+  display: flex;
+  align-items: center;
+  margin-bottom: 46rpx;
+  margin-top: 24rpx;
+}
+
+.player-userinfo-page .file image {
+  width: 96rpx;
+  height: 96rpx;
+}
+
+.player-userinfo-page .file .file-info {
+  margin-left: 32rpx;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.player-userinfo-page .file .file-info text {
+  font-size: 28rpx;
+  font-family: PingFang SC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #121314;
+}
+
+.player-userinfo-page .file .file-info text:last-of-type {
+  color: #B2B2B2;
+  font-size: 24rpx;
+}
+
+.player-userinfo-page .file button {
+  background: var(--themeColor);
+  color: #fff;
+  width: unset;
+  height: 60rpx;
+  line-height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10rpx;
+}
+
+.player-userinfo-page .file button image {
+  width: 34rpx;
+  height: 34rpx;
+}
+
+.player-userinfo-page .file button text {
+  font-size: 26rpx;
+  font-family: PingFang SC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.player-userinfo-page .marginTop {
+  margin-top: 20rpx;
+}

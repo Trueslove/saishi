@@ -1,0 +1,31 @@
+<navigator hover-class="none" url="/pages/competition/index?id={{item.performanceActivityId}}" class="list-item">
+    <view class="cover">
+        <image src="{{imageUrl}}{{item.headBannerUrl[0].url}}"></image>
+    </view>
+    <view class="info">
+        <view class="title">{{item.activityName}}</view>
+        <!-- 搜索模块 -->
+        <view class="search-bottom" wx:if="{{type == 'search'}}">
+            <view class="label">舞蹈演绎</view>
+            <button catchtap="">立即进入</button>
+        </view>
+        <!-- 活动模块 -->
+        <view wx:else class="info-bottom">
+            <view class="label-wrap">
+                <view class="label">{{item.themeNameOne}}</view>
+                <view class="label">{{item.themeNameTwo}}</view>
+            </view>
+            <!-- <button class="status-0" wx:if="{{index == 0}}">报名进行中</button>
+            <button class="status-2" wx:if="{{index == 1}}">活动进行中</button>
+            <button class="status-3" wx:if="{{index == 2}}">活动已结束</button>
+            <button class="status-0" wx:if="{{index != 0 && index != 1 && index != 2}}">报名进行中</button> -->
+            <button class="status-0" wx:if="{{item.btnStatus == 1}}">报名进行中</button>
+            <button class="status-2" wx:if="{{item.btnStatus == 2}}">活动进行中</button>
+            <button class="status-3" wx:if="{{item.btnStatus == 3}}">活动已结束</button>
+            <!--  -->
+            <!-- <button class="status-0" >{{item.statusMessage}}</button> -->
+            <!-- <button class="status-1">活动招募中</button>
+          <button class="status-3">活动已结束</button> -->
+        </view>
+    </view>
+</navigator>

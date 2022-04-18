@@ -1,0 +1,145 @@
+.apply-success-page {
+  background: #f7f7f7;
+  min-height: 100vh;
+  padding-top: 28rpx;
+}
+
+.apply-success-page .wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  margin: 0 74rpx;
+  padding-top: 50rpx;
+  border-radius: 16rpx;
+  box-sizing: border-box;
+}
+
+.apply-success-page .wrap image {
+  width: 256rpx;
+  height: 256rpx;
+  margin-top: 136rpx;
+}
+
+.tp-wrap .tp {
+  font-size: 44rpx;
+  font-family: PingFang SC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #00CB08;
+  padding-top: 18rpx;
+}
+
+.tp-wrap image {
+  margin-top: 144rpx !important;
+}
+.tp-wrap .wrap {
+  padding-top: 0;
+}
+.tp-wrap .tp-msg {
+  font-size: 24rpx;
+  font-family: PingFang SC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #B2B2B2;
+  padding-bottom: 148rpx;
+}
+
+.tp-wrap .code {
+  margin-top: 114rpx;
+  margin-bottom: 44rpx;
+}
+
+.apply-success-page .wrap .success {
+  font-size: 44rpx;
+  font-family: PingFang SC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #00CB08;
+  margin-top: 16rpx;
+  margin-bottom: 32rpx;
+}
+
+.apply-success-page .wrap .code {
+  width: 236rpx;
+  height: 236rpx;
+  margin-bottom: 46rpx;
+}
+
+.apply-success-page .wrap .msg {
+  font-size: 24rpx;
+  width: 368rpx;
+  font-family: PingFang SC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #B2B2B2;
+  text-align-last: center;
+}
+
+.apply-success-page .wrap .info {
+  margin-top: 32rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--themeColor);
+  font-size: 28rpx;
+  font-family: PingFang SC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #FF831F;
+}
+
+.apply-success-page .wrap button {
+  width: 512rpx;
+  height: 92rpx;
+  line-height: 92rpx;
+  background: var(--liner-bg-Color);
+  font-size: 26rpx;
+  border-radius: 10rpx;
+  font-family: PingFang SC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #FFFFFF;
+  padding: 0;
+  margin-top: 46rpx;
+  margin-bottom: 46rpx;
+}
+
+.apply-success-page .cu-dialog {
+  background: transparent;
+
+  position: relative;
+}
+
+.apply-success-page .cu-dialog image,
+.apply-success-page .cu-dialog video {
+  width: 662rpx;
+  height: 992rpx;
+  border-radius: 36rpx;
+}
+
+.apply-success-page .cu-dialog .close {
+  width: 44rpx;
+  height: 44rpx;
+  position: absolute;
+  top: 80rpx;
+  right: 40rpx;
+  z-index: 3;
+
+}
+
+.apply-success-page .cu-dialog .mute {
+  width: 44rpx;
+  height: 44rpx;
+  position: absolute;
+  top: 80rpx;
+  left: 40rpx;
+  z-index: 3;
+
+}
+
+
+
+.apply-success-page .cu-dialog text {
+  font-size: 24rpx;
+  font-family: PingFang SC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #FFFFFF;
+  padding-bottom: 20rpx;
+  display: inline-block;
+}

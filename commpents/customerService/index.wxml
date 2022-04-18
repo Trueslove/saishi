@@ -1,0 +1,3 @@
+<view class="customer-service" bindtap="goKefu">
+    <image src="../../static/images/customer-service.png"></image>
+</view>

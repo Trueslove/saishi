@@ -1,0 +1,159 @@
+<view class="player-list-page">
+  <view class="top">
+    <d-swiper list="{{swipers}}" url="{{imageUrl}}"></d-swiper>
+    <view class="title">
+      <view class="left">
+        <text>#</text>
+        <text wx:if="{{type !== 'promotion'}}">晋级成绩</text>
+        <text wx:if="{{type == 'promotion'}}">作品展演</text>
+      </view>
+      <view class="right">
+        <image src="../../static/images/search.png"></image>
+        <text>搜索</text>
+      </view>
+    </view>
+    <!--  -->
+    <view class="nav" wx:if="{{type == 'promotion'}}">
+      <view class="ul">
+        <view data-id="" bind:tap="handleChangeOne" class="li {{!oneGroupId ? 'nav-active' : ''}}">
+          全部
+        </view>
+        <view wx:for="{{allThemeList}}" data-id="{{item.oneThemeId}}" bind:tap="handleChangeOne" class="li {{item.oneThemeId == oneGroupId ? 'nav-active' : ''}}">
+          {{item.oneThemeName}}
+        </view>
+      </view>
+    </view>
+    <view class="nav-select" wx:if="{{type == 'promotion'}}">
+      <view class="ul">
+        <view wx:for="{{twoList}}" data-id="{{item.twoThemeId}}" bind:tap="handleChangeTwo" class="li {{item.twoThemeId == twoGroupId ? 'nav-select-active' : ''}}">
+          {{item.twoThemeName}}
+        </view>
+      </view>
+    </view>
+    <!-- 展演 -->
+    <view class="select-wrap" wx:if="{{type !== 'promotion'}}">
+      <view class="select-item">
+        <text class="title">阶段</text>
+        <view class="select">
+          <picker bindchange="bindPickerChange" value="{{stagesIndex}}" bindchange="handleChangePickStages" range-key="stageName" range="{{stagesList}}">
+            <view class="picker">
+              <text>{{stagesList[stagesIndex].stageName}}</text>
+              <image src="../../static/images/sj.png"></image>
+            </view>
+          </picker>
+        </view>
+      </view>
+      <view class="select-item">
+        <text class="title">组别</text>
+        <view class="select">
+          <picker bindchange="bindPickerChange" value="{{activeIndex}}" customItem="全部" bindchange="handleChangePickActive" range-key="oneGroupName" range="{{activityGroupCategoryList}}">
+            <view class="picker">
+              <text>{{activityGroupCategoryList[activeIndex].oneGroupName}}</text>
+              <image src="../../static/images/sj.png"></image>
+            </view>
+          </picker>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="player-list">
+    <!-- <block wx:for="{{list}}" wx:item="item" wx:index="index" wx:key="{{index}}"></block> -->
+    <view class="player-item player-item-vote" wx:for="{{list}}" data-id="{{item.performanceActivityEnrollWorkId}}" bindtap="goUser">
+      <view class="cover">
+        <image wx:if="{{type === 'promotion'}}" src="{{imageUrl}}{{item.portraitUrl[0].url}}"></image>
+        <image wx:if="{{type !== 'promotion'}}" src="{{imageUrl}}{{item.imgUrl[0].url}}"></image>
+        <view class="action vote">
+          <!-- 投票数 -->
+          <view class="hots" style="margin-right:10rpx" wx:if="{{type === 'promotion'}}">
+            <image src="../../static/images/hot.png"></image>
+            <text>{{item.totalNumberVotes}}</text>
+          </view>
+          <!-- 晋级 -->
+          <view wx:if="{{item.status == 1}}">
+            <!-- 评审晋级 -->
+            <view class="score score-flex" wx:if="{{item.promotionType == 1}}">
+              <view class="score-left">
+                <text>初评成绩</text>
+                <text>{{item.average}}</text>
+              </view>
+              <image class="score-right" src="../../static/images/success-player.png"></image>
+            </view>
+            <!-- 人气晋级 -->
+            <view class="score" wx:if="{{item.promotionType == 2}}">
+              <view class="score-left">
+                <view class="hot">
+                  <text style="font-size:20rpx">本组人气第{{item.popularityRanking}}名</text>
+                </view>
+              </view>
+              <image class="score-right" src="../../static/images/success-player.png"></image>
+            </view>
+            <!-- 渠道推荐 -->
+            <view class="score" wx:if="{{item.promotionType == 3}}">
+              <text>初评成绩</text>
+              <text>{{item.average}}</text>
+            </view>
+          </view>
+          <!-- 未晋级 -->
+          <view wx:if="{{item.status == 2}}"></view>
+          <!-- hot -->
+          <view class="ranking" wx:if="{{type === 'promotion'}}">
+            <image wx:if="{{index == 0}}" src="../../static/images/first.png"></image>
+            <image wx:elif="{{index == 1}}" src="../../static/images/two.png"></image>
+            <image wx:elif="{{index == 2}}" src="../../static/images/three.png"></image>
+            <text class="fisrt">第{{index + 1}}名</text>
+            <!-- <text class="two">第二名</text> -->
+            <!-- <text class="three">第三名</text> -->
+            <!-- <text>第一名</text> -->
+          </view>
+        </view>
+      </view>
+      <view class="info" wx:if="{{type !== 'promotion'}}">
+        <text>《{{item.workName}}》</text>
+        <text>{{item.enrollName}}</text>
+        <text>{{item.oneGroupName}}-{{item.twoGroupName}}</text>
+      </view>
+      <view class="info" wx:if="{{type === 'promotion'}}">
+        <text>《{{item.workName}}》</text>
+        <view class="info-bottom">
+          <text>{{item.enrollName}}</text>
+          <button data-id="{{item.performanceActivityEnrollWorkId}}" catch:tap="handleWorkVoting" disabled="{{item.isVote == 1}}" wx:if="{{item.isOpenPopularityVote}}" class="{{item.isVote == 1 ? 'null' : ''}}">
+            投一票
+          </button>
+        </view>
+      </view>
+    </view>
+    <!-- <view class="player-item">
+      <view class="cover">
+        <image src="https://img0.baidu.com/it/u=3270048148,2423814197&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500"></image>
+        <view class="action">
+          <view class="score">
+            <text>初评成绩</text>
+            <text>98.35</text>
+          </view>
+          <view class="hot ">
+            <text>本组人气第1名</text>
+          </view>
+          <view class="hot marignRight">
+            <text>推荐晋级</text>
+          </view>
+          <image src="../../static/images/success-player.png"></image>
+        </view>
+      </view>
+      <view class="info">
+        <text>《蓝天白云》</text>
+        <text>张小妹</text>
+        <text>小学组-一年级</text>
+      </view>
+    </view> -->
+    <!-- <view class="player-item player-upload">
+      <view class="cover">
+        <image src="../../static/images/uploading.png"></image>
+        <image class="avatar" src="https://t9.baidu.com/it/u=323668026,2398217598&fm=218&app=126&f=JPEG?w=121&h=75&s=5DE5B144BEB81F9E91013D1D030080DA"></image>
+      </view>
+      <view class="info">
+        <text>作品待上传...</text>
+        <text>张小妹</text>
+      </view>
+    </view> -->
+  </view>
+</view>

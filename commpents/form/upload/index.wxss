@@ -1,0 +1,127 @@
+.flex-wrap{
+    display: flex;
+    flex-wrap: wrap;
+}
+.apply-item {
+    padding: 20rpx 24rpx;
+}
+
+.apply-item .title {
+    display: flex;
+    flex-direction: column;
+    padding-left: 16rpx;
+}
+.apply-item .title .top {
+    display: flex;
+    align-items: center;
+}
+.apply-item .title .tips {
+    margin-top: 4rpx;
+    font-weight: 400;
+}
+
+.apply-item .title .top text:first-of-type {
+    flex: 1;
+    color: #858585;
+}
+
+.apply-item .title .top text:last-of-type {
+    color: #B2B2B2;
+    font-weight: 400;
+}
+
+.borderBottom {
+    border-bottom: 16rpx solid #f7f7f7;
+  }
+
+.apply-item .title text {
+
+    font-size: 24rpx;
+    font-family: PingFang SC-Medium, PingFang SC;
+    font-weight: 500;
+    color: #858585;
+}
+
+
+
+.apply-item .upload-wrap {
+    position: relative;
+    width: 160rpx;
+    height: 160rpx;
+    margin-top: 14rpx;
+}
+.apply-item .upload-wrap:not(:nth-child(4n)){
+    margin-right: 14rpx;
+}
+
+.apply-item .upload-wrap image, .apply-item .upload-wrap video {
+    width: 100%;
+    height: 100%;
+}
+
+.apply-item .upload-wrap text {
+    border-radius: 40rpx;
+    padding: 0 12rpx;
+    height: 28rpx;
+    border: 1px solid #fff;
+    background: rgba(255, 255, 255, .3);
+    position: absolute;
+    bottom: 8rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 20rpx;
+    font-family: PingFang SC-Medium, PingFang SC;
+    font-weight: 500;
+
+
+}
+
+.apply-item .upload-file-wrap {
+    margin-top: 14rpx;
+    display: flex;
+    align-items: center;
+}
+
+.apply-item .upload-file-wrap .upload {
+    width: 160rpx;
+    height: 160rpx;
+}
+
+.apply-item .upload-file-wrap .file-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20rpx;
+}
+
+.apply-item .upload-file-wrap .file-info text:first-of-type {
+    font-size: 28rpx;
+    font-family: PingFang SC-Medium, PingFang SC;
+    font-weight: 500;
+    color: #121314;
+}
+
+.apply-item .upload-file-wrap .file-info text:last-of-type {
+    font-size: 24rpx;
+    font-family: PingFang SC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #B2B2B2;
+    margin-top: 18rpx;
+
+}
+
+.apply-item .upload-wrap .close {
+    width: 40rpx;
+    height: 40rpx;
+    position: absolute;
+    top: 6rpx;
+    right: 6rpx;
+    z-index: 1;
+
+}
+
+
+.apply-page .apply-item .upload {
+    width: 160rpx;
+    height: 160rpx;
+}

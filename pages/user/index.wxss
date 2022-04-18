@@ -1,0 +1,233 @@
+.user-page {
+    min-height: 100vh;
+    background: #F8F8F8;
+}
+
+.user-wrap {
+    display: flex;
+    align-items: center;
+    padding: 0 24rpx;
+    padding-top: 48rpx;
+    position: relative;
+    z-index: 0;
+}
+
+.user-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 260rpx;
+    width: 100%;
+}
+.not-border::before{
+    background: transparent !important;
+    width: 0rpx !important;
+    height: 0rpx !important;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.user-info .avatar {
+    width: 84rpx;
+    height: 84rpx;
+}
+
+.user-info .avatar image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50rpx;
+}
+
+
+.user-info .user-name {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20rpx;
+
+}
+
+.user-info .user-name text:first-of-type {
+    font-size: 34rpx;
+    color: #121314;
+    font-weight: 500;
+    font-family: PingFang SC-Medium, PingFang SC;
+}
+
+.user-info .user-name text:last-of-type {
+    font-size: 24rpx;
+    color: #B2B2B2;
+    font-weight: 400;
+    font-family: PingFang SC-Regular, PingFang SC;
+}
+
+.user-wrap .icon {}
+
+.user-wrap .icon image {
+    width: 48rpx;
+    height: 48rpx;
+}
+
+.user-action {
+    display: flex;
+    align-items: center;
+    margin: 0 24rpx;
+    background: #fff;
+    border-radius: 16rpx;
+    padding-top: 52rpx;
+    padding-bottom: 60rpx;
+    margin-top: 48rpx;
+    z-index: 1;
+    position: relative;
+}
+
+.user-action-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1;
+    border-right: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.user-action-item:last-of-type {
+    border-right: unset;
+}
+
+.user-action-item text:first-of-type {
+    color: #162246;
+    font-weight: bold;
+    font-size: 44rpx;
+    font-family: DIN-Bold, DIN;
+}
+
+.user-action-item text:last-of-type {
+    color: #B2B2B2;
+    font-weight: 400;
+    font-size: 24rpx;
+    font-family: PingFang SC-Regular, PingFang SC;
+}
+
+.user-page .list {
+    background: #fff;
+    border-radius: 16rpx;
+    margin: 0 24rpx;
+    margin-top: 16rpx;
+}
+
+
+.user-page .list .item {
+    display: flex;
+    align-items: center;
+    padding: 24rpx;
+    padding-bottom: 18rpx;
+    position: relative;
+}
+
+.user-page .list .item::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 26rpx;
+    width: 550rpx;
+    height: 1px;
+    background: #E8E8E8;
+}
+
+.user-page .list .item .icon {
+    width: 68rpx;
+    height: 68rpx;
+}
+
+.user-page .list .item .icon image {
+    width: 100%;
+    height: 100%;
+}
+
+.user-page .list .item image {
+    width: 14rpx;
+    height: 24rpx;
+}
+
+.user-page .list .item .info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-left: 34rpx;
+    border-bottom: 1px sold #E8E8E8;
+}
+
+.user-page .list .item .info text:first-of-type {
+    color: #121314;
+    font-size: 28rpx;
+    font-weight: 500;
+    font-family: PingFang SC-Medium, PingFang SC;
+}
+
+.user-page .list .item .info text:last-of-type {
+    color: #B2B2B2;
+    font-size: 24rpx;
+    font-weight: 400;
+    font-family: PingFang SC-Regular, PingFang SC;
+}
+
+.user-page button {
+    margin-top: 124rpx;
+    height: 90rpx;
+    width: 600rpx;
+    color: #121314;
+    font-size: 28rpx;
+    line-height: 90rpx;
+    font-weight: 500;
+    font-family: PingFang SC-Medium, PingFang SC;
+    background: #F0F0F0;
+    padding: 0;
+    border-radius: 50rpx;
+}
+
+.user-page {}
+
+.popup-jjhh-wrap {
+    padding-top: 80rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 662rpx;
+    padding-bottom: 86rpx;
+}
+
+.popup-jjhh-wrap .title {
+    font-size: 34rpx;
+    font-family: PingFang SC-Medium, PingFang SC;
+    font-weight: 500;
+    color: #000000;
+}
+
+.popup-jjhh-wrap .message {
+    padding-top: 2rpx;
+    font-size: 28rpx;
+    font-family: PingFang SC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #B2B2B2;
+}
+
+.popup-jjhh-wrap image {
+    width: 228rpx;
+    height: 228rpx;
+    margin-bottom: 82rpx;
+    margin-top: 76rpx;
+}
+
+.popup-jjhh-wrap button {
+    width: 440rpx;
+    height: 76rpx;
+    line-height: 76rpx;
+    background: linear-gradient(180deg, #FFBA83 0%, #FF7200 100%);
+    border-radius: 10px 10px 10px 10px;
+    color: #fff;
+}

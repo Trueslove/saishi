@@ -1,0 +1,26 @@
+<view class="commodity-page">
+  <view class="commodity-swiper">
+    <d-swiper url="{{dfs}}" list="{{topAdvert}}"></d-swiper>
+  </view>
+  <view class="nav-wrap">
+    <view class="nav">
+      <view class="item {{ !active ? 'active' : ''}}" bindtap="selectNav" data-target=""  wx:index="index">全部</view>
+      <view wx:for="{{productsCategoryList}}" class="item {{ item.id == active ? 'active' : ''}}" bindtap="selectNav" data-target="{{item.id}}">{{item.categoryName}}</view>
+    </view>
+  </view>
+  <view class="commodity-list">
+    <navigator wx:for="{{goodsList}}" url="/pages/commodityDetail/index?id={{item.id}}" hover-class="none" class="commodity-item">
+      <image src="{{imageUrl}}{{item.portraitUrlFirst}}"></image>
+      <text class='title'>{{item.productsName}}</text>
+      <text class="price">${{item.chargeAmount}}</text>
+    </navigator>
+
+    <!-- <navigator class="commodity-item">
+      <image src="https://img2.baidu.com/it/u=1814268193,3619863984&fm=253&fmt=auto&app=138&f=JPEG?w=632&h=500"></image>
+      <text class='title'>簪 ...</text>
+      <text class="price">$11</text>
+    </navigator> -->
+
+  </view>
+
+</view>

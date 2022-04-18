@@ -1,0 +1,85 @@
+
+.apply-page {
+  background: #fff;
+  padding-bottom: 200rpx;
+}
+
+.apply-content {
+  padding-bottom: 100rpx;
+}
+
+
+.zl-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 20rpx 0;
+  background-color: #fff;
+  z-index: 1000;
+}
+
+
+
+.confirm {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  z-index: 1;
+  padding-top: 10rpx;
+    padding-bottom: constant(safe-area-inset-bottom); 
+    /*兼容 IOS<11.2*/
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.confirm button {
+  padding: 0;
+  background: var(--bgThemeColor);
+  color: var(--themeColor);
+  height: 92rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 448rpx;
+}
+
+.confirm button:first-of-type {
+  width: 234rpx;
+}
+
+.confirm button:last-of-type {
+  background: var(--themeColor);
+  color: #fff;
+}
+
+.confirm .cuIcon-back {
+  margin-right: 8rpx;
+}
+
+.confirm .colunm {
+  flex-direction: column;
+}
+
+.confirm .colunm .pay image {
+  width: 24rpx;
+  height: 22rpx;
+  margin-right: 8rpx;
+}
+
+.confirm .colunm .pay {
+  display: flex;
+  align-items: center;
+}
+
+.confirm .colunm .pay text {
+  font-size: 22rpx;
+}
+
+
+.confirm button text {
+  font-size: 26rpx;
+  font-weight: 600;
+}

@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "d-swiper": "/commpents/swiper/index",
+    "new-list-item-a": "/commpents/newListItemA/index",
+    "new-list-item-b": "/commpents/newListItemB/index",
+    "customer-service": "/commpents/customerService/index"
+    
+  },
+  "navigationBarTitleText": "德稻慧展",
+  "navigationBarBackgroundColor": "#F7F7F7"
+}   

@@ -1,0 +1,24 @@
+@import "./colorui/main.wxss";
+@import "./colorui/icon.wxss";
+
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+
+
+
+page {
+  /* 主题色 */
+  --themeColor: #FF831F;
+  /* 主题背景色 */
+  --bgThemeColor: #FFF3E9;
+  /* 主题渐变 */
+  --liner-bg-Color: linear-gradient(180deg, #FFBA83 0%, #FF7200 100%);
+}

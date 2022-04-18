@@ -1,0 +1,43 @@
+<view class="edit-all-page">
+    <!-- 修改姓名 -->
+    <view class="edit-name" wx:if="{{type == 1}}">
+        <input type="text" data-key="nickName" bindinput="changeInput" value="{{nickName}}" />
+        <image class="close" src="../../static/images/close.png"></image>
+    </view>
+    <!-- 修改性别 -->
+    <view class="edit-sex" wx:if="{{type == 2}}">
+        <view class="item" bindtap="checkSex" data-target="1">
+            <text>男</text>
+            <image wx:if="{{sex == 1}}" src="../../static/images/sex-checked.png"></image>
+            <image wx:else src="../../static/images/sex-check.png"></image>
+        </view>
+        <view class="item" bindtap="checkSex" data-target="2">
+            <text>女</text>
+            <image wx:if="{{sex == 2}}" src="../../static/images/sex-checked.png"></image>
+            <image wx:else src="../../static/images/sex-check.png"></image>
+        </view>
+    </view>
+    <!-- 生日 -->
+    <view class="edit-name" wx:if="{{type == 4}}">
+        <picker mode="date" data-key="birthday" value="{{birthday}}" bindchange="changeInput" style="flex:1">
+            <view class="tui-picker-detail">{{birthday}}</view>
+        </picker>
+    </view>
+    <view class="edit-phone" wx:if="{{type == 3}}">
+        <text class="title" wx:if="{{!isEditPhone}}">已绑定手机号：</text>
+        <view class="item" wx:if="{{!isEditPhone}}">
+            <text>{{phone}}</text>
+            <button bindtap="onEditPhone">更换</button>
+        </view>
+        <view class="edit" wx:if="{{isEditPhone}}">
+            <input type="text" data-key="cellphone" value="{{cellphone}}" bindinput="changeInput" placeholder="请输入手机号" />
+            <view class="code">
+                <input type="text" placeholder="请输入验证码" />
+                <button class="get-code" bindtap="getCode">{{btnText}}</button>
+            </view>
+        </view>
+    </view>
+    <view class="btn">
+        <d-button bindtap="editUserData" btnText="确定" wx:if="{{isEditPhone || type != 3}}"></d-button>
+    </view>
+</view>

@@ -1,0 +1,51 @@
+.title-wrap {
+    background: #F7F7F7;
+    display: flex;
+    align-items: center;
+    padding: 18rpx 32rpx;
+    border-bottom: 1px solid #DFDFDF;
+}
+
+.title-wrap .info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.title-wrap .info .title {
+    color: #121314;
+    font-size: 34rpx;
+    font-weight: 500;
+    font-family: PingFang SC-Medium, PingFang SC;
+}
+
+.title-wrap .info .msg {
+    font-size: 24rpx;
+    color: #121314;
+    font-weight: 400;
+    font-family: PingFang SC-Regular, PingFang SC;
+}
+
+.title-wrap .search {
+    display: flex;
+    align-items: center;
+    border-radius: 64rpx;
+    width: 172rpx;
+    height: 64rpx;
+    background: #fff;
+    justify-content: center;
+
+}
+
+.title-wrap .search image {
+    width: 28rpx;
+    height: 28rpx;
+    margin-right: 4rpx;
+}
+
+.title-wrap .search text {
+    color: #B2B2B2;
+    font-size: 24rpx;
+    font-weight: 400;
+    font-family: PingFang SC-Regular, PingFang SC;
+}

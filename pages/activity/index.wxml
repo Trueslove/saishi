@@ -1,0 +1,123 @@
+<view class="activity-page">
+    <list-title title="活动中心" message="素质教育活动一览无余" />
+    <!-- 进行活动 -->
+    <view class="activiting">
+        <view class="title">
+            <text>#</text>
+            进行中的活动
+        </view>
+        <view class="topic-wrap">
+            <!-- 横式 -->
+            <view class="scroll-wrap" style="width: {{640 * 2}}rpx;">
+                <activity-scroll-item wx:for="{{list.specialAdvert}}" item="{{item}}" width="100%" marginLeft="20" width="640rpx"/>
+            </view>
+        </view>
+    </view>
+    <view class="activiting-list">
+        <activity-item wx:for="{{list.activityList}}" item="{{item}}" wx:item="item" wx:index="index" wx:key="{{index}}" />
+    </view>
+    <view class="history-list">
+        <view class="title">
+            <view class="left">
+                <text>#</text>
+                往期活动
+            </view>
+            <view class="select" bindtap="openPopup">
+                <!-- <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+                    <view class="picker">
+                        活动主题：{{array[index]}}
+                    </view>
+                </picker> -->
+                <text>活动主题：全部活动</text>
+                <image src="../../static/images/sanjiaoxing.png"></image>
+            </view>
+        </view>
+        <activity-item wx:for="{{historyList}}" item="{{item}}" wx:item="item" wx:index="index" wx:key="{{index}}" />
+    </view>
+    <!-- 弹窗 -->
+    <popup class="popup" bind:close="close" show="{{show}}" width="662rpx">
+        <view class="title-wrap">
+            <view class="title">
+                <text>#</text>
+                活动主题选择
+            </view>
+            <button catchtap="clickRemake">
+                <image src="../../static/images/remake.png"></image>
+                重置
+            </button>
+        </view>
+        <view class="list">
+            <view class="list-item">
+                <view class="title">文学创作</view>
+                <view class="label-wrap">
+                    <view class="label {{0 == listItemAcitve ? 'label-active' : ''}}" data-target="0" catchtap="clickItem">
+                        诗词歌赋
+                    </view>
+                    <view class="label {{1 == listItemAcitve ? 'label-active' : ''}}" data-target="1" catchtap="clickItem">
+                        文化征文
+                    </view>
+                    <view class="label {{2 == listItemAcitve ? 'label-active' : ''}}" data-target="2" catchtap="clickItem">
+                        综合文学
+                    </view>
+                    <view class="label {{3 == listItemAcitve ? 'label-active' : ''}}" data-target="3" catchtap="clickItem">
+                        综合文学
+                    </view>
+                </view>
+            </view>
+            <view class="list-item">
+                <view class="title">视觉艺术</view>
+                <view class="label-wrap">
+                    <view class="label" catchtap="clickItem">手绘图文</view>
+                    <view class="label" catchtap="clickItem">书法写作</view>
+                    <view class="label" catchtap="clickItem">立体手工</view>
+                    <view class="label" catchtap="clickItem">平面设计</view>
+                    <view class="label" catchtap="clickItem">综合视觉</view>
+                </view>
+            </view>
+            <view class="list-item">
+                <view class="title">摄影短片</view>
+                <view class="label-wrap">
+                    <view class="label" catchtap="clickItem">平面摄影</view>
+                    <view class="label" catchtap="clickItem">短片摄影</view>
+                    <view class="label" catchtap="clickItem">数字记录</view>
+                </view>
+            </view>
+            <view class="list-item">
+                <view class="title">文学创作</view>
+                <view class="label-wrap">
+                    <view class="label label-active" catchtap="clickItem ">诗词歌赋</view>
+                    <view class="label" catchtap="clickItem">文化征文</view>
+                    <view class="label" catchtap="clickItem">综合文学</view>
+                    <view class="label" catchtap="clickItem">综合文学</view>
+                </view>
+            </view>
+            <view class="list-item">
+                <view class="title">文学创作</view>
+                <view class="label-wrap">
+                    <view class="label label-active" catchtap="clickItem ">诗词歌赋</view>
+                    <view class="label" catchtap="clickItem">文化征文</view>
+                    <view class="label" catchtap="clickItem">综合文学</view>
+                    <view class="label" catchtap="clickItem">综合文学</view>
+                </view>
+            </view>
+            <view class="list-item">
+                <view class="title">文学创作</view>
+                <view class="label-wrap">
+                    <view class="label label-active" catchtap="clickItem ">诗词歌赋</view>
+                    <view class="label" catchtap="clickItem">文化征文</view>
+                    <view class="label" catchtap="clickItem">综合文学</view>
+                    <view class="label" catchtap="clickItem">综合文学</view>
+                </view>
+            </view>
+            <view class="list-item">
+                <view class="title">文学创作</view>
+                <view class="label-wrap">
+                    <view class="label label-active" catchtap="clickItem ">诗词歌赋</view>
+                    <view class="label" catchtap="clickItem">文化征文</view>
+                    <view class="label" catchtap="clickItem">综合文学</view>
+                    <view class="label" catchtap="clickItem">综合文学</view>
+                </view>
+            </view>
+        </view>
+    </popup>
+</view>

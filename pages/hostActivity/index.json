@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "activityItem": "/commpents/activityItem/index"
+  },
+  "navigationBarBackgroundColor": "#F7F7F7"
+
+}

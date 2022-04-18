@@ -1,0 +1,248 @@
+.coupon-page .commodityCard-list {
+    padding: 0 22rpx;
+    padding-bottom: 160rpx;
+}
+
+
+
+.coupon-page .action {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.15);
+    padding: 0 20rpx;
+    padding-top: 16rpx;
+    padding-bottom: constant(safe-area-inset-bottom);
+    /*兼容 IOS<11.2*/
+    padding-bottom: env(safe-area-inset-bottom);
+}
+.coupon-page .action .left-item:first-of-type {
+    margin-bottom: 6rpx;
+}
+
+.coupon-page .action .left {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.coupon-page .action .left text {
+    font-size: 26rpx;
+    font-weight: 500;
+    color: #464B52;
+    line-height: 26rpx;
+
+}
+
+.coupon-page .action .left .reds {
+    font-size: 36rpx;
+    font-weight: bold;
+    color: #FF5041;
+    line-height: 36rpx;
+}
+
+.coupon-page .action .null {
+    background: #F5F5F5;
+    color: #BEBEBE;
+
+}
+
+.coupon-page .action button {
+    height: 68rpx;
+    line-height: 68rpx;
+    background: #FF5041;
+    font-size: 26rpx;
+    color: #fff;
+    font-weight: 500;
+    width: 180rpx;
+    padding: 0;
+}
+
+
+
+.satisfy {
+    font-size: 22rpx;
+    font-family: PingFang SC-Medium, PingFang SC;
+    font-weight: 500;
+    color: #8A8A8A;
+    line-height: 32rpx;
+    width: 128rpx;
+    text-align: center;
+    padding: 0 20rpx;
+}
+
+
+.dontCoupon {
+    filter: opacity(0.5);
+}
+
+.placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.placeholder text {
+    margin: 36rpx 0;
+    font-size: 22rpx;
+    font-weight: 400;
+    color: #8A8A8A;
+    line-height: 22rpx;
+    text-align: center;
+    position: relative;
+}
+
+.placeholder text::before,
+.placeholder text::after {
+    content: '';
+    position: absolute;
+    left: calc(-210rpx + -12rpx);
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 210rpx;
+    height: 2rpx;
+    background: #BEBEBE;
+}
+
+.placeholder text::after {
+    left: unset;
+    right: calc(-210rpx + -12rpx);
+
+}
+
+
+.coupon-item .select {
+}
+
+.coupon-item .select image {
+    width: 40rpx;
+    height: 40rpx;
+    margin: 0 !important;
+}
+
+
+
+.commodityCard-item {
+    display: flex;
+    flex-direction: column;
+    padding: 16rpx;
+    background: #fff;
+    border-radius: 14rpx;
+    margin-bottom: 16rpx;
+}
+
+.commodityCard-item .top {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    height: 160rpx;
+}
+
+.commodityCard-item .top image {
+    width: 528rpx;
+    height: 160rpx;
+    border-radius: 10rpx;
+    margin-right: 10rpx;
+}
+
+.commodityCard-item .select {
+    background: #F5F5F5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1;
+    height: 160rpx;
+    border-radius: 10rpx;
+}
+
+.commodityCard-item .select image {
+    width: 40rpx;
+    height: 40rpx;
+    margin: 0;
+}
+
+.commodityCard-item .select text {
+    padding-top: 12rpx;
+    font-size: 20rpx;
+    font-weight: 500;
+    color: #464B52;
+    line-height: 20rpx;
+}
+
+
+.commodityCard-item .bottom {
+    padding-top: 30rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+.commodityCard-item .bottom .a1 {
+
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding-bottom: 28rpx;
+}
+
+.commodityCard-item .bottom .a1 text:first-of-type {
+    font-size: 28rpx;
+    font-weight: 500;
+    color: #292A3D;
+    line-height: 28rpx;
+    flex: 1;
+}
+
+.commodityCard-item .bottom .a1 text:last-of-type {
+    font-size: 26rpx;
+    font-weight: 500;
+    color: #FF5041;
+    line-height: 26rpx;
+}
+.commodityCard-item .bottom .bottom-item {
+    display: flex;
+    align-items: center;
+}
+
+.commodityCard-item .bottom .a2 text:first-of-type {
+    font-size: 24rpx;
+    font-weight: 400;
+    color: #464B52;
+    flex: 1;
+    line-height: 24rpx;
+}
+
+.commodityCard-item .bottom .a2 text:last-of-type {
+    font-size: 24rpx;
+    font-weight: 400;
+    color: #464B52;
+    line-height: 24rpx;
+}
+.commodityCard-item .bottom .a3 {
+    padding-top: 12rpx;
+}
+
+.commodityCard-item .bottom .a3 text:first-of-type {
+    font-size: 22rpx;
+    font-weight: 400;
+    color: #464B52;
+    line-height: 22rpx;
+    flex: 1;
+}
+
+.commodityCard-item .bottom .a3 text:last-of-type {
+    font-size: 36rpx;
+    font-family: DIN-Bold, DIN;
+    font-weight: bold;
+    color: #FF5041;
+    line-height: 36rpx;
+}
+
+.commodityCard-list .dont {
+    filter: opacity(0.5);
+}

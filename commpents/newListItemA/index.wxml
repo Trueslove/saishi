@@ -1,0 +1,10 @@
+<navigator hover-class="none" url="/pages/newsDetail/index?newsId={{item.newsId}}" class="news-item-a">
+    <image class="cover" src="{{item.coverPic}}"></image>
+    <view class="info">
+        <text class="title">{{item.title}}</text>
+        <view class="news-bottom">
+            <text class="left">{{item.categoryName}}</text>
+            <text class="right">{{item.releaseTime}}</text>
+        </view>
+    </view>
+</navigator>

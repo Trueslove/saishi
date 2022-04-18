@@ -1,0 +1,64 @@
+<view class="chat-page">
+
+    <view class="chat-list">
+        <view class="left">
+            <view class="avatar">
+                <image src="https://img2.baidu.com/it/u=2945453006,1814818261&fm=253&fmt=auto&app=138&f=JPEG?w=360&h=360"></image>
+            </view>
+            <view class="content">
+                <view class="msg">asdassdjnhsadjnajs jas</view>
+                <view class="is-read">已读</view>
+            </view>
+
+        </view>
+
+        <view class="right">
+            <view class="avatar">
+                <image src="https://img1.baidu.com/it/u=3249070913,912844529&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500"></image>
+
+            </view>
+            <view class="content">
+                <view class="msg">uhasu啊接口难受点击啊啥牛杰啊女司机的接纳is见你啊手机啊手机洒进啊手机京阿尼事件啊啥dasuhhjash</view>
+                <view class="is-read not-read">已读</view>
+            </view>
+        </view>
+        <view class="right">
+            <view class="avatar">
+                <image src="https://img1.baidu.com/it/u=3249070913,912844529&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500"></image>
+
+            </view>
+            <view class="content">
+                <view class="photo">
+                    <image mode="aspectFill" src="https://img1.baidu.com/it/u=3249070913,912844529&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500"></image>
+                </view>
+            </view>
+            
+        </view>
+
+        <view class="left">
+            <view class="avatar">
+                <image src="https://img2.baidu.com/it/u=2945453006,1814818261&fm=253&fmt=auto&app=138&f=JPEG?w=360&h=360"></image>
+            </view>
+            <view class="content">
+                <view class="msg">据哈哈哈 jas</view>
+                <view class="is-read">已读</view>
+            </view>
+
+        </view>
+    </view>
+
+
+    <view class="chat-action">
+        <view class="left">
+            <image src="../../static/images/voice.png"></image>
+
+        </view>
+        <view class="input">
+            <textarea auto-height contenteditable="true"></textarea>
+        </view>
+        <view class="right">
+            <image src="../../static/images/expression.png"></image>
+            <image src="../../static/images/more.png"></image>
+        </view>
+    </view>
+</view>

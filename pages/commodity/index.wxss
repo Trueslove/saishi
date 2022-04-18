@@ -1,0 +1,99 @@
+.commodity-page {
+  background: #fff;
+  min-height: 100vh;
+}
+
+.commodity-swiper {
+  padding: 24rpx;
+  padding-top: 34rpx;
+}
+
+.commodity-page .nav-wrap {
+  margin: 20rpx 0;
+  overflow-x: auto;
+}
+
+.commodity-page .nav {
+  display: flex;
+  align-items: center;
+  padding-left: 24rpx;
+}
+
+.commodity-page .nav .item:first-of-type {
+  margin-left: 0;
+}
+
+.commodity-page .nav .item {
+  font-size: 34rpx;
+  font-family: PingFang SC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #121314;
+  margin: 0 20rpx;
+  padding-bottom: 20rpx;
+}
+
+.commodity-page .active {
+  color: var(--themeColor) !important;
+  position: relative;
+}
+
+.commodity-page .active::before {
+  content: '';
+  position: absolute;
+  bottom: 5rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40rpx;
+  height: 4rpx;
+  background: var(--themeColor);
+}
+
+.commodity-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 30rpx;
+  background: #F7F7F7;
+  border-radius: 23rpx;
+  min-height: 70vh;
+}
+
+.commodity-list .commodity-item {
+  display: flex;
+  flex-direction: column;
+  width: 328rpx;
+  height: 482rpx;
+  background: #fff;
+  margin-top: 23rpx;
+  padding-bottom: 20rpx;  
+  border-radius: 23rpx;
+  overflow: hidden;
+}
+
+.commodity-list .commodity-item:nth-of-type(2n) {
+  margin-left: 30rpx;
+}
+.commodity-list .commodity-item image {
+  width: 326rpx;
+  height: 326rpx;
+
+}
+
+
+.commodity-list .commodity-item .title {
+  font-size: 28rpx;
+  font-family: PingFang SC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #121314;
+  height: 80rpx;
+  padding: 0 16rpx;
+  padding-right: 14rpx;
+}
+
+.commodity-list .commodity-item .price {
+  font-size: 28rpx;
+  font-family: DIN-Bold, DIN;
+  font-weight: bold;
+  color: #FF5041;
+  padding-left: 16rpx;
+  margin-top: 4rpx;
+}

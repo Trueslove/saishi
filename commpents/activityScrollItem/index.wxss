@@ -1,0 +1,78 @@
+.scroll-item {
+    /* margin-left: 20rpx; */
+    padding-bottom: 32rpx;
+    border-bottom-left-radius: 20rpx;
+    border-bottom-right-radius: 20rpx;
+
+}
+
+
+.scroll-item {
+    /* width: 640rpx; */
+    background: #fff;
+    display: inline-block;
+}
+
+.scroll-item .cover {
+    /* width: 640rpx; */
+    height: 280rpx;
+    margin-bottom: 20rpx;
+    position: relative;
+    overflow: hidden;
+    border-top-right-radius: 20rpx;
+    border-top-left-radius: 20rpx;
+}
+
+.scroll-item .cover .label {
+    position: absolute;
+    top: -40rpx;
+    right: -70rpx;
+    background: #DA1414;
+    color: #fff;
+    font-size: 22rpx;
+    font-weight: 500;
+    width: 160rpx;
+    height: 88rpx;
+    text-align: center;
+    line-height: 140rpx;
+    transform: rotate(45deg);
+
+}
+
+.scroll-item .cover image {
+    /* width: 640rpx; */
+    width: 100%;
+    height: 280rpx;
+}
+
+.scroll-item .title {
+    font-size: 32rpx;
+    color: #000;
+    font-weight: 500;
+    height: 84rpx;
+    font-family: PingFang SC-Medium, PingFang SC;
+    padding: 0 20rpx;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+
+.scroll-item button {
+    margin-top: 32rpx;
+    font-size: 24rpx;
+    border-radius: 64rpx;
+    height: 64rpx;
+    width: 284rpx;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+    color: var(--themeColor);
+    background: var(--bgThemeColor);
+}

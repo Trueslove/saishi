@@ -1,0 +1,10 @@
+<view class="channel-cooper-page">
+  <view class="msg">
+    <text>请复制以下地址 </text>
+    <text>使用电脑浏览器登录您的渠道管理后台</text>
+  </view>
+  <view class="input">
+    <input type="text" value="{{url}}"/>
+  </view>
+  <button bindtap="onCopy">复制地址</button>
+</view>

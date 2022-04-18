@@ -1,0 +1,103 @@
+{
+    "setting": {},
+    "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+    "condition": {
+        "plugin": {
+            "list": []
+        },
+        "game": {
+            "list": []
+        },
+        "gamePlugin": {
+            "list": []
+        },
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "新闻咨询列表",
+                    "pathName": "pages/news/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "新闻详情",
+                    "pathName": "pages/newsDetail/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "活动中心",
+                    "pathName": "pages/activity/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "赛事",
+                    "pathName": "pages/user_competition/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "晋级成绩",
+                    "pathName": "pages/player/index",
+                    "query": "performanceActivityId =\"performanceActivityEnrollId\"",
+                    "scene": null
+                },
+                {
+                    "name": "作者",
+                    "pathName": "pages/playerUser/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "商品",
+                    "pathName": "pages/commodity/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "商品详情",
+                    "pathName": "pages/commodityDetail/index",
+                    "query": "id=50c135dae0e1430296534118d9c36aee",
+                    "scene": null
+                },
+                {
+                    "name": "全部作品",
+                    "pathName": "pages/player/index",
+                    "query": "type=promotion",
+                    "scene": null
+                },
+                {
+                    "name": "作品详情",
+                    "pathName": "pages/playerUser/index",
+                    "query": "id=109441f1084e47248f253518da6bdf1c",
+                    "scene": null
+                },
+                {
+                    "name": "选手详情",
+                    "pathName": "pages/playerUserInfo/index",
+                    "query": "id=022208d19e7848d188fc1d4b43519da8",
+                    "scene": null
+                },
+                {
+                    "name": "作品管理",
+                    "pathName": "pages/uploadWork/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "下单页面",
+                    "pathName": "pages/commoditySubmit/index",
+                    "query": "id=50c135dae0e1430296534118d9c36aee&specsId=7fc2331ae33047a596f3f62b6d36b26b",
+                    "scene": null
+                },
+                {
+                    "name": "赛事报名",
+                    "pathName": "pages/apply/index",
+                    "query": "performanceActivityId=adb160bb0dbe40ae8047e4e66438f98d",
+                    "scene": null
+                }
+            ]
+        }
+    }
+}

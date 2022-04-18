@@ -1,0 +1,153 @@
+<view class="coupon-page">
+    <view class="coupon-list">
+        <view class="coupon-item">
+            <view class="money">
+                <image src="../../static/images/coupon-2.png"></image>
+                <view class="price">
+                    <text>￥</text>
+                    <text>200</text>
+                </view>
+                <text class="p">满400元可用</text>
+            </view>
+            <view class="coupon-info">
+                <view class="title">商品满减券</view>
+                <view class="date">有效期：2021-03-01 至 2021-06-31</view>
+                <view class="msg">鸿萌蛋体验店 特定商品可用</view>
+            </view>
+            <button>立即领取</button>
+        </view>
+        <view class="coupon-item">
+            <view class="money">
+                <image src="../../static/images/coupon-2.png"></image>
+                <view class="price">
+                    <text>￥</text>
+                    <text>200</text>
+                </view>
+                <text class="p">满400元可用</text>
+            </view>
+            <view class="coupon-info">
+                <view class="title">商品满减券</view>
+                <view class="date">有效期：2021-03-01 至 2021-06-31</view>
+                <view class="msg">鸿萌蛋体验店 特定商品可用</view>
+            </view>
+            <button class="has">已领取</button>
+        </view>
+        <view class="coupon-item">
+            <view class="money">
+                <image src="../../static/images/coupon-2.png"></image>
+                <view class="price">
+                    <text>￥</text>
+                    <text>200</text>
+                </view>
+                <text class="p">满400元可用</text>
+            </view>
+            <view class="coupon-info">
+                <view class="title">商品满减券</view>
+                <view class="date">有效期：2021-03-01 至 2021-06-31</view>
+                <view class="msg">鸿萌蛋体验店 特定商品可用</view>
+            </view>
+            <button class="has">关注并领取</button>
+        </view>
+        <view class="coupon-item">
+            <view class="money">
+                <image src="../../static/images/coupon-2.png"></image>
+                <view class="price">
+                    <text>￥</text>
+                    <text>200</text>
+                </view>
+                <text class="p">满400元可用</text>
+            </view>
+            <view class="coupon-info">
+                <view class="title">商品满减券</view>
+                <view class="date">有效期：2021-03-01 至 2021-06-31</view>
+                <view class="msg">鸿萌蛋体验店 特定商品可用</view>
+            </view>
+            <view class="select">
+                <image src="../../static/images/coupon-select.png"></image>
+            </view>
+        </view>
+        <view class="coupon-item">
+            <view class="money">
+                <image src="../../static/images/coupon-2.png"></image>
+                <view class="price">
+                    <text>￥</text>
+                    <text>200</text>
+                </view>
+                <text class="p">满400元可用</text>
+            </view>
+            <view class="coupon-info">
+                <view class="title">商品满减券</view>
+                <view class="date">有效期：2021-03-01 至 2021-06-31</view>
+                <view class="msg">鸿萌蛋体验店 特定商品可用</view>
+            </view>
+            <view class="select">
+                <image src="../../static/images/coupon-select-ed.png"></image>
+            </view>
+        </view>
+    </view>
+    <view class="placeholder">
+        <text>以下优惠暂不满足使用条件</text>
+    </view>
+    <view class="coupon-list">
+        <view class="coupon-item">
+            <view class="money">
+                <image src="../../static/images/coupon-2.png"></image>
+                <view class="price">
+                    <text>￥</text>
+                    <text>200</text>
+                </view>
+                <text class="p">满400元可用</text>
+            </view>
+            <view class="coupon-info">
+                <view class="title">商品满减券</view>
+                <view class="date">有效期：2021-03-01 至 2021-06-31</view>
+                <view class="msg">鸿萌蛋体验店 特定商品可用</view>
+            </view>
+            <view class="satisfy">未达到 可用金额</view>
+        </view>
+        <view class="coupon-item">
+            <view class="money">
+                <image src="../../static/images/coupon-2.png"></image>
+                <view class="price">
+                    <text>￥</text>
+                    <text>200</text>
+                </view>
+                <text class="p">满400元可用</text>
+            </view>
+            <view class="coupon-info">
+                <view class="title">商品满减券</view>
+                <view class="date">有效期：2021-03-01 至 2021-06-31</view>
+                <view class="msg">鸿萌蛋体验店 特定商品可用</view>
+            </view>
+            <view class="satisfy">未达到 可用时间</view>
+        </view>
+        <view class="coupon-item dontCoupon">
+            <view class="money">
+                <image src="../../static/images/coupon-2.png"></image>
+                <view class="price">
+                    <text>￥</text>
+                    <text>200</text>
+                </view>
+                <text class="p">满400元可用</text>
+            </view>
+            <view class="coupon-info">
+                <view class="title">商品满减券</view>
+                <view class="date">有效期：2021-03-01 至 2021-06-31</view>
+                <view class="msg">鸿萌蛋体验店 特定商品可用</view>
+            </view>
+            <view class="satisfy">仅限 新人可用</view>
+
+        </view>
+
+    </view>
+
+
+    <view class="action">
+        <view class="left">
+            <text>实付：</text>
+            <text>¥52000.00</text>
+        </view>
+        <button>提交订单</button>
+        <!-- <button class="null">提交订单</button> -->
+    </view>
+</view>

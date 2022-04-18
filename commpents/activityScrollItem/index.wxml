@@ -1,0 +1,8 @@
+<view bindtap="goToShowAd" class="scroll-item" style="margin-left: {{marginLeft}}rpx;width: {{width}};">
+    <view class="cover" style="width: {{width}};">
+        <image style="width: {{width}};" src="{{imageUrl}}{{item.url}}"></image>
+        <view class="label">专题</view>
+    </view>
+    <text class="title">{{item.name}}</text>
+    <button>专题所有活动 {{item.specialActivityNum}}</button>
+</view>

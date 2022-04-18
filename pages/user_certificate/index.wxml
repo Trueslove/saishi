@@ -1,0 +1,11 @@
+<view class="certificate-page">
+    <view class="cover">
+        <image src="{{imageUrl}}{{info.imgUri}}"></image>
+    </view>
+
+    <view class="btn-action">
+        <button wx:if="{{info.hasImg == 1}}" data-type="img" bind:tap="click">下载图片</button>
+        <button wx:if="{{info.hasPdf == 1}}" data-type="pdf" bind:tap="click">下载PDF</button>
+        <button data-type="share" open-type="share">转发</button>
+    </view>
+</view>

@@ -1,0 +1,147 @@
+<view class="apply-page">
+  <view class="apply-content" wx:for="{{targeFormList}}" wx:item="itemP" wx:index="indexp" wx:key="indexp" wx:for-item="itemP" wx:for-index="indexp">
+    <block wx:if="{{indexp + 1 == currentPage}}">
+      <block wx:for="{{itemP}}" wx:item="item" wx:index="index" wx:key="index">
+        <!-- input -->
+        <block wx:if="{{item.type == 'city' || item.type == 'ID' || item.type == 'age' || item.type == 'input' || item.type == 'userName_enroll_preset' || item.type == 'mobile' || item.type == 'wx' || item.type == 'email' || item.type == 'input_works_preset'}}">
+          <apply-input name="{{item.title}}" placeholder="请输入{{item.title}}" type="input" bindcustomevent="changeListener" data-key="{{item.performanceActivityFormId}}" maxWordLimit="{{item.maxWordLimit}}" value="{{form[item.performanceActivityFormId]}}"></apply-input>
+        </block>
+        <!-- 性别 -->
+        <block wx:elif="{{item.type == 'sex'}}">
+          <apply-select radio title="{{item.title}}" options="{{item.formOptions}}" bindcustomevent="changeListener" data-key="{{item.performanceActivityFormId}}" value="{{form[item.performanceActivityFormId]}}"></apply-select>
+        </block>
+        <!-- 生日 -->
+        <block wx:elif="{{item.type == 'date'}}">
+          <apply-input name="{{item.title}}" placeholder="请输入{{item.title}},如：2000-02-03" type="input" bindcustomevent="changeListener" data-key="{{item.performanceActivityFormId}}" value="{{form[item.performanceActivityFormId]}}"></apply-input>
+        </block>
+        <!-- 作品封面 -->
+        <block wx:elif="{{item.type == 'uploadPic_works_preset' || item.type == 'user_works_preset' || item.type == 'uploadPic' || item.type == 'uploadAudio' || item.type == 'uploadVideo' || item.type == 'uploadFile' || item.type == 'uploadPic_enroll_preset'}}">
+          <apply-upload type="{{item.type}}" title="{{item.title}}" maxNumberLimit="{{item.maxNumberLimit}}" bindcustomevent="changeListener" data-key="{{item.performanceActivityFormId}}" value="{{form[item.performanceActivityFormId]}}"></apply-upload>
+        </block>
+        <!-- 作品radio -->
+        <block wx:elif="{{item.type == 'radio' || item.type == 'group_preset'}}">
+          <apply-select radio title="{{item.title}}" options="{{item.formOptions}}" bindcustomevent="changeListener" data-key="{{item.performanceActivityFormId}}" value="{{form[item.performanceActivityFormId]}}"></apply-select>
+        </block>
+        <!-- 作品checkbox -->
+        <block wx:elif="{{item.type == 'checkbox'}}">
+          <apply-select checkbox title="{{item.title}}" options="{{item.formOptions}}" bindcustomevent="changeListener" data-key="{{item.performanceActivityFormId}}" value="{{form[item.performanceActivityFormId]}}"></apply-select>
+        </block>
+        <block wx:elif="{{item.type == 'group_preset'}}">
+          <apply-group value="{{form[item.performanceActivityFormId]}}"></apply-group>
+        </block>
+        <block wx:elif="{{item.type == 'textarea'}}">
+          <apply-textarea name="{{item.title}}" placeholder="请输入{{item.title}}" bindcustomevent="changeListener" data-key="{{item.performanceActivityFormId}}" value="{{form[item.performanceActivityFormId]}}"></apply-textarea>
+        </block>
+        <block wx:if="{{item.isLinkage === 1}}">
+          <view wx:for="{{item.beLinkForms}}"
+          wx:for-item="it"
+          wx:for-index="i"
+          wx:key="i"
+          wx:if="{{it.linkageOptionId === form[item.performanceActivityFormId]}}">
+          <!-- input -->
+          <block wx:if="{{it.type == 'input' || it.type == 'userName_enroll_preset' || it.type == 'mobile' || it.type == 'wx' || it.type == 'email' || it.type == 'input_works_preset'}}">
+            <apply-input name="{{it.title}}" placeholder="请输入{{it.title}}" type="input" bindcustomevent="changeListener" data-key="{{it.performanceActivityFormId}}" value="{{form[item.performanceActivityFormId]}}"></apply-input>
+          </block>
+          <!-- 性别 -->
+          <block wx:elif="{{it.type == 'sex'}}">
+            <apply-select radio title="{{it.title}}" options="{{it.formOptions}}" bindcustomevent="changeListener" data-key="{{it.performanceActivityFormId}}" value="{{form[item.performanceActivityFormId]}}"></apply-select>
+          </block>
+          <!-- 生日 -->
+          <block wx:elif="{{it.type == 'date'}}">
+            <apply-input name="{{it.title}}" placeholder="请输入{{it.title}},如：2000-02-03" type="input" bindcustomevent="changeListener" data-key="{{it.performanceActivityFormId}}"></apply-input>
+          </block>
+          <!-- 作品名称 -->
+          <block wx:elif="{{it.type == 'input_works_preset'}}">
+            <apply-input name="{{it.title}}" placeholder="请输入{{it.title}}" type="input" bindcustomevent="changeListener" data-key="{{it.performanceActivityFormId}}" value="{{form[item.performanceActivityFormId]}}"></apply-input>
+          </block>
+          <!-- 作品封面 -->
+          <block wx:elif="{{it.type == 'uploadPic_works_preset' || it.type == 'user_works_preset' || it.type == 'uploadPic' || it.type == 'uploadAudio' || it.type == 'uploadVideo' || it.type == 'uploadFile'}}">
+            <apply-upload type="{{it.type}}" title="{{it.title}}" maxNumberLimit="{{it.maxNumberLimit}}" bindcustomevent="changeListener" data-key="{{it.performanceActivityFormId}}" value="{{form[item.performanceActivityFormId]}}"></apply-upload>
+          </block>
+          <!-- 作品radio -->
+          <block wx:elif="{{it.type == 'radio'}}">
+            <apply-select radio title="{{it.title}}" options="{{it.formOptions}}" bindcustomevent="changeListener" data-key="{{it.performanceActivityFormId}}" value="{{form[item.performanceActivityFormId]}}"></apply-select>
+          </block>
+          <!-- 作品checkbox -->
+          <block wx:elif="{{it.type == 'checkbox'}}">
+            <apply-select checkbox title="{{it.title}}" options="{{it.formOptions}}" bindcustomevent="changeListener" data-key="{{item.performanceActivityFormId}}" value="{{form[item.performanceActivityFormId]}}"></apply-select>
+          </block>
+          <block wx:elif="{{it.type == 'group_preset'}}">
+            <apply-group value="{{form[item.performanceActivityFormId]}}"></apply-group>
+          </block>
+          <block wx:elif="{{it.type == 'textarea'}}">
+            <apply-textarea name="{{it.title}}" placeholder="请输入{{it.title}}" bindcustomevent="changeListener" data-key="{{it.performanceActivityFormId}}" value="{{form[item.performanceActivityFormId]}}"></apply-textarea>
+          </block>
+        </view>
+      </block>
+      </block>
+    </block>
+    <!-- <view class="apply-item borderBottom">
+    <view class="title">
+      <text>单选布展方式</text>
+    </view>
+    <view class="ellipse-d-wrap">
+      <view class="ellipse-d-item">
+        <image src="../../static/images/Ellipse.png"></image>
+        <text>自行布展</text>
+      </view>
+      <view class="ellipse-d-item">
+        <image src="../../static/images/Ellipse-selected.png"></image>
+        <text>自行布展</text>
+      </view>
+    </view>
+    <view class="title">
+      <text>多选 住宿方式</text>
+    </view>
+    <view class="ellipse-d-wrap">
+      <view class="ellipse-d-item">
+        <image src="../../static/images/Ellipse.png"></image>
+        <text>自行安排</text>
+      </view>
+      <view class="ellipse-d-item">
+        <image src="../../static/images/Ellipse-selected.png"></image>
+        <text>组委会安排标间（免费）</text>
+      </view>
+      <view class="ellipse-d-item borderBottom">
+        <image src="../../static/images/Ellipse-selected.png"></image>
+        <text>2021第四届中白“丝绸之路”国际青少年艺术大赛国际青少年艺术大赛</text>
+      </view>
+    </view>
+  </view> -->
+  </view>
+  <view class="zl-footer">
+    <!-- 表单页数为1 -->
+    <view class="apply-wrap confirm" wx:if="{{pageSumNum == 1}}">
+      <button class="colunm" style="width: 95%" bindtap="submit">
+        <text wx:if="{{!isPay}}">{{isEdit ? '保存' : '立即报名'}}</text>
+        <text wx:else>确认报名</text>
+        <view class="pay" wx:if="{{isPay}}">
+          <image src="../../static/images/wx-pay.png"></image>
+          <text>微信支付10元报名费</text>
+        </view>
+      </button>
+    </view>
+    <!-- 当前在最后一页 -->
+    <view class="apply-wrap confirm" wx:elif="{{pageSumNum == currentPage}}">
+      <button data-type="back" bindtap="handleClick">
+        <text class="cuIcon-back"></text>
+        上一步
+      </button>
+      <button class="colunm" bindtap="submit">
+        <text>确认报名</text>
+        <view class="pay" wx:if="{{isPay}}">
+          <image src="../../static/images/wx-pay.png"></image>
+          <text>微信支付10元报名费</text>
+        </view>
+      </button>
+    </view>
+    <!-- 其它情况 -->
+    <view class="apply-wrap confirm" wx:else>
+      <button data-type="back" bindtap="handleClick">
+        <text class="cuIcon-back"></text>
+        上一步
+      </button>
+      <button data-type="next" bindtap="handleClick">下一步</button>
+    </view>
+  </view>
+</view>

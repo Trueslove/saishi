@@ -1,0 +1,48 @@
+<view class="login-wrap">
+  <view class="logo-wrap">
+    <image src="../../static/images/logo.png" class="logo"></image>
+    <text>徳稻慧展</text>
+  </view>
+
+  <view class="action" wx:if="{{loginType == 1}}">
+    <button bindtap="getUserInfo">登录/注册</button>
+    <button bindtap="getPhoneLogin">手机号登录</button>
+  </view>
+
+
+  <view class="phone-login" wx:if="{{loginType == 2}}">
+    <input type="text" value="{{phone}}" type="number" maxlength="11" bindinput="onInput" data-target="phone" focus placeholder="请输入手机号" />
+    <view class="code">
+      <input type="text" focus="{{codeInputFocus}}" value="{{code}}" data-target="code" bindinput="onInput" placeholder="请输入验证码" />
+      <button bindtap="getCode" disabled="{{getCodeing}}">{{ codeText }}</button>
+    </view>
+    <button class="login" disabled="{{!isClickLogin}}" bindtap="codeLogin">登录</button>
+  </view>
+
+  <!-- 确认获取手机号弹窗 -->
+  <popup show="{{isGetPhone}}" width="500rpx">
+    <view class="getphone-popup">
+      <text>获取手机号</text>
+      <view class="btn-wrap">
+        <button bindtap="closeGetPhonePopup">取消</button>
+        <button open-type="getPhoneNumber" bindgetphonenumber="getPhone">确定</button>
+      </view>
+    </view>
+  </popup>
+
+  <popup class="phone-modal" width="658rpx" bind:close="phonePopupCancel" show="{{phoneModal}}">
+    <view class="phone-modal-wrap">
+      <text class='title'>手机号：17283847372 已绑定此微信</text>
+      <view class="avatar">
+        <image src="https://dss2.bdstatic.com/8_V1bjqh_Q23odCf/pacific/1994179965.png"></image>
+      </view>
+      <text class="name">大川</text>
+      <view class="message"><text>您可以更换手机号进行登陆。</text> <text>或点击取消并使用已绑定此手机的微信号进行登陆。</text></view>
+      <view class="btns">
+        <button bindtap="phonePopupCancel">取消</button>
+        <button>更换手机号</button>
+      </view>
+    </view>
+  </popup>
+
+</view>

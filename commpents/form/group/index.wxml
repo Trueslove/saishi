@@ -1,0 +1,13 @@
+<view class="apply-item borderBottom">
+    <view class="title">
+        <text>选择组别</text>
+    </view>
+    <!-- 确认报名展示 -->
+
+    <!-- <view class="group-item">
+    <text>彩色摄影 风景组</text>
+</view> -->
+    <view class="group-item add">
+        <text>请选择组别</text>
+    </view>
+</view>

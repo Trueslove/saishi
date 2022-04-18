@@ -1,0 +1,34 @@
+<view class="apply-item borderBottom">
+  <block wx:if="{{radio}}">
+    <view class="title">
+      <text>{{title}}</text>
+    </view>
+    <view class="ellipse-d-wrap">
+      <block wx:for="{{options}}" wx:item="{{item}}" wx:key="index">
+        <view class="ellipse-d-item" data-target="{{item.optionValue}}" bindtap="select" data-value="{{item.formOptionId}}">
+          <image wx:if="{{formOptionId == item.formOptionId}}" src="../../../static/images/Ellipse-selected.png"></image>
+          <image wx:else src="../../../static/images/Ellipse.png"></image>
+          <text>{{item.optionText}}</text>
+        </view>
+      </block>
+    </view>
+  </block>
+
+  <block wx:if="{{checkbox}}">
+    <view class="title">
+      <text>多选 {{title}}</text>
+    </view>
+    <view class="ellipse-d-wrap">
+      <block wx:for="{{options}}" wx:item="{{item}}" wx:key="index">
+        <view class="ellipse-d-item" data-target="{{item.optionValue}}" bindtap="selects" data-value="{{item.formOptionId}}">
+          <image wx:if="{{formOptionIdSelect[index]}}" src="../../../static/images/Ellipse-selected.png"></image>
+          <image wx:else src="../../../static/images/Ellipse.png"></image>
+          <text>{{item.optionText}}</text>
+        </view>
+      </block>
+    </view>
+
+  </block>
+
+
+</view>

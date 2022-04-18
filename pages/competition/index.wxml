@@ -1,0 +1,173 @@
+<import src="../../wxParse/wxParse.wxml"/>
+<view class="competition-page">
+
+    <!-- 客服 -->
+    <customer-service wx:if="{{detail.customerServiceUserId}}"></customer-service>
+
+    <view class="title">
+        <text>主办方</text>
+        <navigator hover-class="none" url="/pages/hostActivity/index?id={{detail.sponsorId}}">{{detail.sponsorName}}></navigator>
+    </view>
+    <view class="wrap content-1">
+        <view class="content-1-swiper">
+            <d-swiper url="{{imageUrl}}" list="{{detail.headBannerUrl}}"></d-swiper>
+        </view>
+
+        <navigator hover-class="none" wx:if="{{detail.noticeContent || detail.isShowNotice}}" url="/pages/playerUser/index">
+            <!-- <rich-text nodes="{{detail.noticeContent}}"></rich-text> -->
+            <template is="wxParse" data="{{ wxParseData: noticeContent.nodes }}"/>
+        </navigator>
+    </view>
+    <view class="news">
+        <view class="item-title not-padding">
+            <view class="left">
+                <text>#</text>新闻咨询
+            </view>
+        </view>
+
+        <view wx:for="{{detail.newsList}}" wx:item="{{item}}" wx:key="{{index}}" wx:index="{{index}}">
+            <new-list-item-a wx:if="{{!item.coverPic}}" item="{{item}}" />
+            <new-list-item-b wx:else item="{{item}}" />
+        </view>
+  
+
+        <navigator hover-class="none" url="/pages/news/index" class="news-more-btn-wrap">
+            <button wx:if="{{detail.isMoreNews == 1}}">更多活动咨询 <image src="../../static/images/link-arrow.png"></image></button>
+        </navigator>
+
+    </view>
+
+    <view class="work">
+
+        <view class="radius">
+            <view class="item-title">
+                <view class="left">
+                    <text>#</text>作品展演
+                </view>
+                <navigator hover-class="none" url="/pages/player/index?type=promotion&performanceActivityId={{detail.performanceActivityId}}" class="right" hover-class="none">
+                    查看全部作品></navigator>
+            </view>
+            <!-- 未报名状态 -->
+            <!-- <view class="see-player" wx:if="{{detail.lastStageWorks.length <= 0}}">
+                <text>已有 17283 名选手报名</text>
+                <button>查看</button>
+            </view> -->
+            <!-- 有作品 -->
+            <view class="has-work" wx:if="{{detail.lastStageWorks.length > 0}}">
+                <view class="tower-swiper-wrap">
+                    <view class="tower-swiper" bindtouchmove="towerMove" bindtouchstart="towerStart" bindtouchend="towerEnd">
+                        <view class="tower-item {{item.zIndex==1?'none':''}}{{item.zIndex ==2?'ss':''}}" wx:for="{{swiperList}}" wx:key style="--index:{{item.zIndex}};--left:{{item.mLeft}}">
+                            <view class="swiper-item">
+                                <image src="{{imageUrl}}{{item.cover[0].thumbnail}}" mode="aspectFill" ></image>
+                                <!-- <image src="{{item.url}}" mode="aspectFill" ></image> -->
+                                <!-- <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video> -->
+                            </view>
+                        </view>
+                    </view>
+                    <view class="indicator">
+                        <view class="indicator-item {{index == curIndex ? 'cur' : ''}}" wx:for="{{swiperList}}" wx:index="{{index}}"></view>
+                    </view>
+                </view>
+
+                <view class="work-title">{{swiperList[curIndex].worksName}}</view>
+                <!-- <view class="work-title">《美好事与物》</view> -->
+                <view class="msg" wx:if="{{detail.isPopularVote == 1}}">
+                    <image src="../../static/images/hot.png"></image><text>人气投票火热进行中</text>
+                </view>
+                <view class="user">
+                    <image src="{{imageUrl}}{{swiperList[curIndex].avatar}}" alt="" class="avatar" />
+                    <!-- <image src="https://img1.baidu.com/it/u=793269991,2224346596&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500" alt="" class="avatar" /> -->
+                    
+                    <view class="info">
+                        <text>{{swiperList[curIndex].name}}</text>
+                        <text>选手编号：{{swiperList[curIndex].enrollNumber}}</text>
+                        <!-- <text>选手编号：选手编号：AAXX_8473</text> -->
+                        
+                    </view>
+                    <button class="see-btn" bindtap="goPlayerUserInfo">查看</button>
+                </view>
+
+            </view>
+
+            <view class="score" wx:if="{{detail.isShowPromotion == 1}}">
+                <view class="left">
+                    <text>晋级成绩</text>
+                    <text>已公布 {{detail.promotionObj.stageName}} 晋级成绩</text>
+                </view>
+                <button class="see-btn" bindtap="goPlayer">查看</button>
+            </view>
+
+        </view>
+    </view>
+    <view class="wrap introduce">
+        <template is="wxParse" data="{{ wxParseData: activityDetails.nodes }}"/>
+
+        <!-- <rich-text nodes="{{detail.activityDetails}}"></rich-text> -->
+        <!-- <text class="h1">活动的时间</text>
+        <text class="p">为贯彻“立德树人”教育精神，落实中共中央办公厅和国务院办公厅《关于全面加强和改进新时代学校美育工作的意见》，推动艺术素养教育在中国义务教育阶段的普及和提升，全国政协常务委员兼副秘书长、新教育实验发起人朱永新先生和德稻集团董事局主席、博鳌亚洲论坛永久荣誉会员李卓智先生共同发起“博鳌全球少儿美育论坛暨新少年国际艺术节”。</text>
+
+        <text class="h1">组别设置</text>
+        A5錒、、、、、、、、、、、、、、、、、、、啊啊啊啊【‘【；；--------- <text class="p">依年龄设置幼儿组、小学组、中学组及合创组四个组别，每组均有下列各个奖项。</text>
+
+        <text class="h1">各组均设置下列奖项</text>
+        <text class="p">1、大奖1个 - 手绘图画书大奖；
+            2、单项奖8个，包括创意奖、文学奖、绘制奖、角色造型奖、装帧设计奖、特色风格奖、材料运用奖及人气奖；
+            3、优秀奖，入围复评的所有作品均授予优秀奖并颁发证书；
+            4、指导教师奖；
+            5、组织奖。</text>
+        <text class="h1">征集范围</text>
+        <text class="p">手绘图画书大展面向全球中小学生及幼儿园儿童征集作品</text>
+
+        <text class="h1">参展作品要求</text>
+        <text class="p">1、 作品语言文字要求以汉语为主，可以有外文和符号，经典故事、诗词和原创故事及诗词内容均可，内容要求积极向上、向善、求真求美；
+            2、手绘书样式、材料、纸张、表现手法、装订方式等不限；绘画风格，艺术表现手法，黑白、彩色不限；
+            3、要求原创，未经出版；
+            4、合创作品的团体人数不可超过8人；
+            5、每人／合创组限定提交1本，总页数不少于10页；
+            6、上传的电子文件格式以图片形式为主，文件大小不能超过100M。</text> -->
+
+
+        <view class="partner-btn">
+            <navigator url="/pages/channelCooper/index?url={{detail.isShowChannelManageEntrance == 1}}">渠道合作伙伴管理入口</navigator>
+        </view>
+
+    </view>
+
+
+    <view class="competton-bottom">
+        <view class="left">
+            <text>{{detail.userStageInfo.title}}</text>
+
+            <text wx:if="{{detail.userStageInfo.type == 1}}">距离报名截止还有{{activityTime}}</text>
+            <text wx:if="{{detail.userStageInfo.type == 3}}">上传作品进行中</text>
+            <text wx:if="{{detail.userStageInfo.type == 4}}">更新作品进行中</text>
+            <text wx:if="{{detail.userStageInfo.type == 5}}">报名已截止</text>
+        </view>
+        <view class="right">
+            <button data-type="share" open-type="share">
+                <image src="../../static/images/share.png"></image>
+                分享
+            </button>
+            <navigator url="/pages/apply/index?performanceActivityId={{detail.performanceActivityId}}" wx:if="{{detail.userStageInfo.type == 1}}">
+                <image src="../../static/images/toupiao.png"></image>
+                立即报名
+            </navigator>
+              <navigator url="/pages/apply/index" wx:if="{{detail.userStageInfo.type == 3}}">
+                <image src="../../static/images/upload-work.png"></image>
+                上传作品
+            </navigator>
+            <navigator url="/pages/apply/index"  wx:if="{{detail.userStageInfo.type == 2}}">
+                我的报名与作品
+            </navigator>
+            <navigator url="/pages/apply/index" wx:if="{{detail.userStageInfo.type == 4}}">
+                <image src="../../static/images/upload-work.png"></image>
+                更新作品
+            </navigator>
+            <navigator url="/pages/apply/index?performanceActivityId={{detail.performanceActivityId}}" class="stop" wx:if="{{detail.userStageInfo.type == 5}}">
+                报名已截止
+            </navigator>
+
+        </view>
+    </view>
+
+</view>

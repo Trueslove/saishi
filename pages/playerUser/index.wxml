@@ -1,0 +1,200 @@
+<view class="player-user-page">
+  <!-- 客服 -->
+  <customer-service></customer-service>
+  <view class="user-wrap">
+    <view class="user">
+      <image src="{{imageUrl}}{{dataInfo.portraitUrl[0].url}}"></image>
+      <view class="info">
+        <text>{{dataInfo.enrollName}}</text>
+        <text>选手编号：{{dataInfo.enrollNumber}}</text>
+      </view>
+      <navigator url="/pages/playerUserInfo/index?id={{dataInfo.performanceActivityEnrollId}}" hover-class="none">
+        更多信息>
+      </navigator>
+    </view>
+    <view class="work">
+      <image src="../../static/images/vector.png"></image>
+      <text>{{dataInfo.oneThemeName}}-{{dataInfo.twoThemeName}}</text>
+      <text>{{dataInfo.currentWorkStageName}}</text>
+      <button data-target="DrawerModalR" bindtap="showModal">切换</button>
+    </view>
+  </view>
+  <view class="cover">
+    <image src="{{imageUrl}}{{dataInfo.workFormRecord[1].answer}}"></image>
+  </view>
+  <view class="info-wrap">
+    <view class="work-info">
+      <view class="left">
+        <text>《{{dataInfo.workFormRecord[0].answer}}》</text>
+        <text>作品编号：{{dataInfo.performanceActivityEnrollWorkId}}</text>
+      </view>
+      <view class="right">
+        <text>作品人气：</text>
+        <text class="num">{{dataInfo.totalNumberVotes}}</text>
+      </view>
+    </view>
+    <view class="work-msg">
+      <view wx:for="{{dataInfo.workFormRecord}}">
+        <text class="title">{{item.title}}</text>
+        <view wx:if="{{item.type == 'uploadPic_works_preset' || item.type == 'uploadPic' || item.type == 'user_works_preset'}}">
+          <image wx:for="{{item.answer}}" wx:for-item="child" src="{{imageUrl}}{{child.thumbnail}}" alt="" />
+        </view>
+        <!-- 音乐 -->
+        <view wx:elif="{{item.type == 'uploadAudio'}}">
+          <audio wx:for="{{item.answer}}" wx:for-item="child" src="{{imageUrl}}{{child.url}}"></audio>
+        </view>
+        <!-- 文件下载 -->
+        <view class="player-userinfo-page" wx:elif="{{item.type == 'uploadFile'}}">
+          <view class="file" wx:for="{{item.answer}}" wx:for-item="child">
+            <image src="../../static/images/has-file.png"></image>
+            <view class="file-info">
+              <text>{{child.name}}</text>
+              <text>{{child.size}}</text>
+            </view>
+            <button bindtap="donwload" data-name="{{child.name}}" data-url="{{child.url}}">
+              <image src="../../static/images/download.png"></image>
+              <text>下载文件</text>
+            </button>
+          </view>
+        </view>
+        <!-- 视频 -->
+        <view wx:elif="{{item.type == 'uploadVideo'}}">
+          <view class="video" wx:for="{{item.answer}}" wx:for-item="child">
+            <video poster="{{imageUrl}}{{child.thumbnail}}" data-info="{{child}}" src="{{imageUrl}}{{child.url}}"></video>
+            <image src="../../static/images/video-start.png"></image>
+          </view>
+        </view>
+        <view wx:else>
+          <text>{{item.answer}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="school-wrap" wx:for="{{dataInfo.resultRecord}}">
+    <view class="school">
+      <view class="info">
+        <text>{{item.stageName}}</text>
+        <text>{{item.stageBeginTime}}</text>
+      </view>
+      <image src="../../static/images/school-success.png"></image>
+    </view>
+    <view class="school-hot">
+      <image src="../../static/images/awards-icon-2.png"></image>
+      <view class="info">
+        <view class="name">
+          <text>人气排名 第1名</text>
+          <text class="success">成功晋级</text>
+        </view>
+        <view class="bottom">人气值 {{item.popularityRanking}} 统计时间 {{item.createTime}}</view>
+      </view>
+    </view>
+    <view class="school-hot" wx:if="{{item.promotionType==3}}">
+      <image src="../../static/images/awards-icon-2.png"></image>
+      <view class="info">
+        <view class="name">
+          <text>德稻教育 晋级评审</text>
+        </view>
+        <view class="bottom">“因作品布局大胆，破格晋级。因作品布局大胆，破格晋级。因作品布局大胆，破格晋级。”</view>
+      </view>
+    </view>
+    <view class="review-infor">
+      <view class="title">
+        <text>
+          <text>#</text>
+          评审信息
+        </text>
+        <view class="right">
+          <text>平均分</text>
+          <text>{{dataInfo.stageReviewAverageScore}}</text>
+        </view>
+      </view>
+      <view class="review-infor-wrap" wx:for="{{item.judgesScoreList}}" wx:for-item="judgesItem">
+        <image src="{{imageUrl}}{{judgesItem.judgescover.url}}"></image>
+        <view class="info">
+          <view class="info-top">
+            <text>- {{judgesItem.judgesName}} {{judgesItem.judgesTitle}}</text>
+            <view class="info-top-right">
+              <text>{{judgesItem.average}}</text>
+              <image src="../../static/images/fen.png"></image>
+            </view>
+          </view>
+          <view class="info-wrap">
+            <text>{{judgesItem.optionTitle}}</text>
+            <image src="{{imageUrl}}{{judgesItem.judgeselectronicsignurl.url}}"></image>
+          </view>
+          <view class="evaluate-wrap">
+            <view class="child-score" bindtap="check" wx:if="{{!show}}">
+              <text>子评分</text>
+              <image src="../../static/images/sjx.png"></image>
+            </view>
+            <block wx:if="{{show}}">
+              <view class="evaluate" wx:for="{{judgesItem.scoringRecordList}}" wx:for-item="scorItem">
+                <view class="evaluate-item">
+                  <text>{{scorItem.optionTitle}}</text>
+                  <text>{{scorItem.score}}分</text>
+                </view>
+                <view class="msg">{{scorItem.subComments}}</view>
+              </view>
+              <view bindtap="check" class="child-score child-score-bottom">
+                <text>子评分</text>
+                <image src="../../static/images/sjx.png"></image>
+              </view>
+            </block>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="nav-bottom">
+    <view class="top">
+      <text>距离报名截止还有{{dataInfo.isVoteTimeEnd}}天</text>
+      <text>当前组别人气排名第{{dataInfo.popularityRanking}}</text>
+    </view>
+    <view class="bottom">
+      <view class="left">
+        <image src="../../static/images/hot.png"></image>
+        <text>{{dataInfo.totalNumberVotes}}</text>
+      </view>
+      <view class="right">
+        <button data-type="share" open-type="share">
+          <image src="../../static/images/share.png"></image>
+          <text>分享</text>
+        </button>
+        <button disabled="{{dataInfo.isVote == 1}}" catch:tap="handleWorkVoting" class="{{dataInfo.isVote == 1 ? 'null' : ''}}">
+          <image wx:if="{{dataInfo.isMyWork == 0}}" src="../../static/images/tp.png"></image>
+          <navigator url="/pages/uploadWork/index?id={{dataInfo.performanceActivityEnrollId}}" wx:if="{{dataInfo.isMyWork == 1}}">管理报名与作品</navigator>
+          <text wx:if="{{dataInfo.isMyWork == 0}}">为他投票</text>
+        </button>
+      </view>
+    </view>
+  </view>
+  <view class="userinfo-wrap cu-modal drawer-modal justify-end {{modalName=='DrawerModalR'?'show':''}}" catch:tap="hideModal">
+    <view class="cu-dialog modal-user-wrap basis-lg" style="top:{{CustomBar}}px;height:calc(100vh - {{CustomBar}}px)">
+      <view class="modal-user-info">
+        <view class="left">
+          <image src="{{imageUrl}}{{userGroupWork.enrollMsg.enrollCoverPic[0].url}}"></image>
+          <text>{{userGroupWork.enrollMsg.enrollName}}</text>
+        </view>
+        <navigator url="/pages/playerUserInfo/index?id={{userGroupWork.enrollMsg.performanceActivityEnrollId}}" hover-class="none">
+          选手信息>
+        </navigator>
+      </view>
+      <view class="list" wx:for="{{userGroupWork.workList}}">
+        <view class="title">
+          <text>#</text>
+          <text>{{item.groupName}}</text>
+        </view>
+        <view wx:for="{{item.stageList}}" class="item {{child.performanceActivityEnrollWorkId == activeId ? 'activeItem' : ''}}" wx:for-item="child" catch:tap="handleChangeActiveId" data-id="{{child.performanceActivityEnrollWorkId}}">
+          <view class="item-info">
+            <view class="item-info-title">{{child.stageNames}}</view>
+            <text wx:for="{{child.workAnswer}}" wx:for-item="answerItem" wx:if="{{answerItem.type == 'input_works_preset'}}">
+              <text class="active-text" wx:if="{{answerItem.answer}}">{{answerItem.answer}}</text>
+              <text wx:else class="null">(未上传作品)</text>
+            </text>
+          </view>
+          <text class="cuIcon-right"></text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

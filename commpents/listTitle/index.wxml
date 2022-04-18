@@ -1,0 +1,10 @@
+<view class="title-wrap">
+    <view class="info">
+        <text class="title">{{title}}</text>
+        <text class="msg">{{message}}</text>
+    </view>
+    <navigator class="search" url="/pages/search/index">
+        <image src="../../static/images/search.png"></image>
+        <text>搜索</text>
+    </navigator>
+</view>

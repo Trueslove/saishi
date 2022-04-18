@@ -1,0 +1,33 @@
+<view class="apply-success-page tp-wrap"  wx:if="{{false}}">
+  <view class="wrap">
+    <image src="../../static/images/success.png"></image>
+    <text class="tp">投票成功</text>
+    <image class="code" src="https://img2.baidu.com/it/u=1989038259,1842360401&fm=253&fmt=auto&app=138&f=PNG?w=500&h=500"></image>
+    <text class="tp-msg">关注公众号 及时获知最新活动动态</text>
+  </view>
+</view>
+
+<view class="apply-success-page">
+  <view class="wrap">
+    <image src="../../static/images/success.png"></image>
+    <text class="success">报名成功 !</text>
+    <image class="code" src="https://img2.baidu.com/it/u=1989038259,1842360401&fm=253&fmt=auto&app=138&f=PNG?w=500&h=500"></image>
+    <text class="msg">关注公众号 及时获知最新活动动态 推送您的作品最新消息：</text>
+    <view class="info">
+      <text>·作品晋级</text>
+      <text>·奖状证书颁发信息</text>
+    </view>
+    <button bindtap="goUser">查看我的报名</button>
+  </view>
+
+
+  <view class="cu-modal {{ modalName =='Modal'?'show':''}}">
+    <view class="cu-dialog">
+      <text>来自活动主办方的广告</text>
+      <image bindtap="hideModal" class="close" src="../../static/images/close-black.png"></image>
+      <!-- <image class="mute" src="../../static/images/mute.png"></image> -->
+      <image src="https://img2.baidu.com/it/u=1989038259,1842360401&fm=253&fmt=auto&app=138&f=PNG?w=500&h=500"></image>
+      <!-- <video src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"></video> -->
+    </view>
+  </view>
+</view>

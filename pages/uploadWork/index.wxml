@@ -1,0 +1,61 @@
+<view class="uploadwork-page">
+  <view class="title">
+    <text>#</text>
+    {{enrollWork.enrollMsg.activityName}}
+  </view>
+  <view class="apply-info" wx:if="{{enrollWork.enrollMsg.enrollStatus == 1}}">
+    <text>我的报名信息</text>
+    <view class="btns">
+      <navigator>编辑</navigator>
+      <navigator>编辑</navigator>
+    </view>
+  </view>
+  <view class="wrap" wx:for="{{enrollWork.workList}}">
+    <view class="item-title">{{item.oneGroupName}} {{item.twoGroupName}}</view>
+    <navigator class="item-work" wx:if="{{item.isUpload == 1}}" wx:for="{{item.stageWorkList}}" wx:for-item="child"  url="/pages/apply/index?performanceActivityId={{item.performanceActivityId}}&enrollGroupId={{item.enrollGroupId}}&stageId={{child.stageId}}">
+      <image src="{{imageUrl}}{{child.workUrl}}"></image>
+      <view class="info">
+        <text>《{{child.workTitle}}》</text>
+        <text class="date">上传时间：{{child.uploadTime}}</text>
+        <view class="info-bottom">
+          <button>编辑</button>
+          <text>查看>></text>
+        </view>
+      </view>
+    </navigator>
+    <view class="item-work">
+      <image src="https://img.alicdn.com/imgextra/i2/2212514628452/O1CN01pSbwJ02CJ4Gn6K82C_!!2212514628452.jpg_310x310.jpg"></image>
+      <view class="info">
+        <text>《雪融树下》</text>
+        <text class="date">上传时间：2021.04.23</text>
+        <view class="info-bottom">
+          <navigator>查看>></navigator>
+        </view>
+      </view>
+    </view>
+    <view class="item-work-add-wrap">
+      <view class="item-work-add">
+        <text class="cuIcon-add"></text>
+        <text>更新作品</text>
+      </view>
+    </view>
+  </view>
+  <view class="wrap">
+    <view class="item-title">彩色摄影 风景组</view>
+    <view class="item-work-add-wrap">
+      <view class="item-work-add">
+        <text class="cuIcon-add"></text>
+        <text>上传作品</text>
+      </view>
+    </view>
+  </view>
+  <view class="wrap">
+    <view class="item-title">黑白摄影 风景组</view>
+    <view class="item-work-add-wrap">
+      <view class="item-work-add">
+        <text class="cuIcon-add"></text>
+        <text>尚未达到上传作品时间</text>
+      </view>
+    </view>
+  </view>
+</view>

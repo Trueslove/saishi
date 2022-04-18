@@ -1,0 +1,260 @@
+/**index.wxss**/
+.home-page {
+  display: flex;
+  flex-direction: column;
+}
+.home-b-info {
+    background: #fff;
+    border-radius: 18rpx;
+}
+
+.home-page .userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #aaa;
+}
+
+.home-page .userinfo-avatar {
+  overflow: hidden;
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.home-page .usermotto {
+  margin-top: 200px;
+}
+
+.home-page .user-wrap {
+  display: flex;
+  align-items: center;
+  /* height: 128rpx; */
+  padding: 0 24rpx;
+  padding-bottom: 22rpx;
+  background: #F8F8F8;
+  border-bottom: 1px solid #DFDFDF;
+}
+
+.home-page .user-wrap .user-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding-top: 10rpx;
+}
+
+.home-page .user-wrap .user-left .avatar {
+  width: 84rpx;
+  height: 84rpx;
+  border-radius: 84rpx;
+  margin-right: 20rpx;
+}
+
+.home-page .user-wrap .user-left .name {
+  font-size: 34rpx;
+  color: #121314;
+  font-weight: 500;
+  font-family: PingFang SC-Medium, PingFang SC;
+}
+
+.home-page .user-wrap .user-right {
+  display: flex;
+  align-items: center;
+}
+
+.home-page .user-wrap .user-right .icon-wrap {
+  position: relative;
+}
+
+.home-page .user-wrap .user-right .icon-wrap text {
+  background: #F40E0E;
+  padding: 0 4rpx;
+  font-size: 16rpx;
+  font-family: PingFang SC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #FFFFFF;
+  position: absolute;
+  top: -8rpx;
+  right: 0;
+  border-radius: 16rpx;
+}
+
+
+.home-page .user-wrap .user-right .icon {
+  width: 48rpx;
+  height: 48rpx;
+  margin-left: 36rpx;
+}
+
+.index-swiper {
+  /* margin-top: calc(50rpx); */
+  margin: 24rpx;
+  padding-top: 24rpx;
+}
+
+.top-swiper-nav {
+  background: #fff;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 58rpx;
+  padding-right: 56rpx;
+  margin-top: 10rpx;
+}
+
+.nav .nav-item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+}
+
+.nav .nav-item:first-of-type {
+  display: flex;
+  align-items: flex-start;
+}
+
+.nav .nav-item:nth-of-type(2) {
+  margin-right: 30rpx;
+}
+
+.nav .nav-item:last-of-type {
+  display: flex;
+  align-items: flex-end;
+}
+
+.nav .nav-item image {
+  width: 100rpx;
+  height: 100rpx;
+  margin-bottom: 12rpx;
+}
+
+.nav .nav-item text {
+  color: #121314;
+  font-size: 24rpx;
+  font-family: PingFang SC-Regular, PingFang SC;
+}
+
+
+.topic-wrap {
+  width: 750rpx;
+  background: linear-gradient(to bottom, #fff, #f8f8f8);
+  padding-top: 45rpx;
+  padding-bottom: 44rpx;
+  overflow-x: auto;
+}
+
+.scroll-wrap {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.topic-list {
+  background: #fff;
+  border-radius: 18rpx;
+
+}
+
+
+.link {
+  display: flex;
+  align-items: center;
+  padding: 0 32rpx;
+  margin-top: 38rpx;
+  margin-bottom: 40rpx;
+}
+
+.link .link-left {
+  color: var(--themeColor);
+  font-size: 24rpx;
+  font-weight: 500;
+  text-decoration: underline;
+  flex: 1;
+  margin-left: 8rpx;
+}
+
+.link .go {
+  color: #121314;
+  font-size: 24rpx;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  padding-left: 46rpx;
+}
+
+.link image {
+  width: 20rpx;
+  height: 20rpx;
+  margin-left: 10rpx;
+}
+
+.ad {
+  height: 240rpx;
+  margin: 0 32rpx;
+  margin-bottom: 80rpx;
+}
+
+.ad image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+}
+
+.news-title {
+  width: 496rpx;
+  height: 92rpx;
+  margin: 0 auto;
+  margin-bottom: 22rpx;
+}
+
+.news-title image {
+  width: 100%;
+  height: 100%;
+}
+
+.news-list {
+  margin: 0 32rpx;
+}
+
+.news-bottom {
+  display: flex;
+  align-items: center;
+  margin-top: 12rpx;
+}
+
+.news-bottom .left,
+.news-bottom .right {
+  color: #B2B2B2;
+  font-size: 20rpx;
+  font-weight: 400;
+}
+
+.news-bottom .left {
+  flex: 1;
+}
+
+
+.more {
+  color: #000000;
+  font-size: 24rpx;
+  font-weight: 500;
+  width: 278rpx;
+  font-family: PingFang SC-Medium, PingFang SC;
+  height: 64rpx;
+  padding: 0;
+  border-radius: 64rpx;
+  line-height: 64rpx;
+  margin-bottom: 132rpx;
+  margin-top: 50rpx;
+}
+
+.more image {
+  width: 20rpx;
+  height: 20rpx;
+  margin-left: 8rpx;
+}
